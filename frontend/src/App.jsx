@@ -10,6 +10,8 @@ import DashboardPage from './pages/DashboardPage';
 import InvestigationsPage from './pages/InvestigationsPage';
 import InvestigationDetailPage from './pages/InvestigationDetailPage';
 import CollectPage from './pages/CollectPage';
+import PostDetailPage from './pages/PostDetailPage';
+import ActorProfilePage from './pages/ActorProfilePage';
 import UsersPage from './pages/UsersPage';
 import SystemPage from './pages/SystemPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -36,6 +38,8 @@ export default function App() {
               <Route path="/investigations" element={<InvestigationsPage />} />
               <Route path="/investigations/:id" element={<InvestigationDetailPage />} />
               <Route path="/investigations/:id/collect" element={<CollectPage />} />
+              <Route path="/investigations/:id/posts/:postId" element={<PostDetailPage />} />
+              <Route path="/investigations/:id/actors/:actorId" element={<ActorProfilePage />} />
 
               {/* Administrator Only Routes */}
               <Route

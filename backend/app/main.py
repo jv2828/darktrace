@@ -1,5 +1,6 @@
 """DARKTRACE API application entry point."""
 
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
@@ -11,12 +12,23 @@ from app.api.v1.router import api_v1_router
 from app.core.config import settings
 from app.core.exceptions import APIException
 from app.core.responses import error
+from app.services.pipeline_service import recover_interrupted_pipeline_runs
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Application lifespan context manager for startup and shutdown routines."""
+    # Startup: recover any pipeline runs interrupted by server restart
+    recover_interrupted_pipeline_runs()
+    yield
+
 
 # Create FastAPI application
 app = FastAPI(
     title="DARKTRACE API",
     description="Dark web threat-intelligence and actor-correlation platform API.",
     version="0.1.0",
+    lifespan=lifespan,
 )
 
 # Configure Cross-Origin Resource Sharing (CORS)
@@ -85,4 +97,18 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 # Mount API v1 router
 app.include_router(api_v1_router, prefix="/api/v1")
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    """Root landing endpoint for browser visits to the API server."""
+    return {
+        "name": "DARKTRACE API",
+        "version": "0.1.0",
+        "status": "online",
+        "message": "DARKTRACE backend API is running. The frontend web UI is available at http://127.0.0.1:5173",
+        "frontend_url": "http://127.0.0.1:5173",
+        "docs_url": "http://127.0.0.1:8000/docs",
+        "health_url": "http://127.0.0.1:8000/api/v1/health",
+    }
 

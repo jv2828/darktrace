@@ -3,7 +3,7 @@
 import enum
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Optional
-from sqlalchemy import DateTime, Enum, ForeignKey, Identity, Text, func
+from sqlalchemy import DateTime, Enum, ForeignKey, Identity, Index, Text, func, text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
@@ -30,6 +30,14 @@ class PipelineRun(Base):
     """Execution run instance executing an investigation analysis pipeline."""
 
     __tablename__ = "pipeline_runs"
+    __table_args__ = (
+        Index(
+            "uq_pipeline_runs_active_investigation",
+            "investigation_id",
+            unique=True,
+            postgresql_where=text("status IN ('queued', 'running')"),
+        ),
+    )
 
     id: Mapped[int] = mapped_column(Identity(), primary_key=True)
     investigation_id: Mapped[int] = mapped_column(

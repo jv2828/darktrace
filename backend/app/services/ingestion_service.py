@@ -21,15 +21,18 @@ from fastapi import UploadFile
 from sqlalchemy import distinct, func, select
 from sqlalchemy.orm import Session, joinedload
 
+from app.analysis.extraction import extract_all
 from app.core.config import ROOT_DIR
 from app.core.exceptions import APIException
 from app.models.dataset import Dataset, DatasetSourceType
+from app.models.extracted_indicator import ExtractedIndicator
 from app.models.investigation import Investigation
 from app.models.investigation_dataset import InvestigationDataset
 from app.models.marketplace import Marketplace
 from app.models.post import Post
 from app.models.threat_actor import ThreatActor
 from app.models.user import User, UserRole
+from app.services.extraction_service import extract_post
 from app.services.normalise import (
     compute_dedupe_hash,
     normalise_marketplace,
@@ -177,6 +180,15 @@ def load_sample_to_investigation(
             db.add(InvestigationDataset(investigation_id=investigation.id, dataset_id=dataset.id))
             db.commit()
 
+        # Ensure any unextracted posts in existing dataset get indicators
+        unextracted = db.execute(
+            select(Post).where(Post.dataset_id == dataset.id, Post.extractor_version.is_(None))
+        ).scalars().all()
+        for up in unextracted:
+            extract_post(db, up)
+        if unextracted:
+            db.commit()
+
         # Count existing posts in dataset
         post_count = db.execute(
             select(func.count(Post.id)).where(Post.dataset_id == dataset.id)
@@ -196,10 +208,19 @@ def load_sample_to_investigation(
     # Dataset does not exist yet: parse and ingest all rows atomically
     raw_posts = sample_data.get("posts", [])
     valid_rows = []
+    seen_hashes: set[str] = set()
+    skipped_duplicates = 0
+
     for idx, p in enumerate(raw_posts, start=1):
         validated = validate_post_row(p, row_number=idx)
         if validated["status"] in {"valid", "valid_with_warnings"}:
-            valid_rows.append(validated)
+            d_hash = validated["dedupe_hash"]
+            if d_hash and d_hash in seen_hashes:
+                skipped_duplicates += 1
+            else:
+                if d_hash:
+                    seen_hashes.add(d_hash)
+                valid_rows.append(validated)
 
     # Ingest in one transaction
     new_dataset = Dataset(
@@ -265,10 +286,31 @@ def preview_manual_post(
         "invalid": 1 if status == "invalid" else 0,
     }
 
+    # Run extraction preview
+    ext_res = extract_all(
+        content=validated.get("content", ""),
+        structured=validated.get("structured_indicators"),
+    )
+    extracted_dicts = [ind.to_dict() for ind in ext_res.indicators]
+    text_stats_dict = ext_res.text_stats.to_dict()
+
+    validated["extracted"] = extracted_dicts
+    validated["text_stats"] = text_stats_dict
+
+    indicators_by_type: Dict[str, int] = {}
+    for ind in extracted_dicts:
+        t = ind["indicator_type"]
+        indicators_by_type[t] = indicators_by_type.get(t, 0) + 1
+
+    summary["indicators_found"] = len(extracted_dicts)
+    summary["indicators_by_type"] = indicators_by_type
+
     return {
         "file_info": {"filename": "manual_entry", "size_bytes": len(str(payload)), "format": "manual"},
         "summary": summary,
         "rows": [validated],
+        "extracted": extracted_dicts,
+        "text_stats": text_stats_dict,
         "truncated": False,
     }
 
@@ -455,7 +497,12 @@ async def parse_and_validate_upload_file(
         "valid_with_warnings": 0,
         "duplicates": 0,
         "invalid": 0,
+        "indicators_found": 0,
+        "indicators_by_type": {},
     }
+
+    total_indicators_found = 0
+    indicators_by_type: Dict[str, int] = {}
 
     for idx, row in enumerate(raw_rows, start=1):
         val = validate_post_row(
@@ -464,6 +511,19 @@ async def parse_and_validate_upload_file(
             existing_hashes_in_batch=seen_hashes_batch,
             existing_hashes_in_db=existing_hashes_db,
         )
+
+        # Run extraction preview
+        ext_res = extract_all(
+            content=val.get("content", ""),
+            structured=val.get("structured_indicators"),
+        )
+        val["extracted"] = [ind.to_dict() for ind in ext_res.indicators]
+        val["text_stats"] = ext_res.text_stats.to_dict()
+
+        for ind in ext_res.indicators:
+            total_indicators_found += 1
+            indicators_by_type[ind.indicator_type] = indicators_by_type.get(ind.indicator_type, 0) + 1
+
         validated_rows.append(val)
 
         status = val["status"]
@@ -479,6 +539,9 @@ async def parse_and_validate_upload_file(
             summary["duplicates"] += 1
         elif status == "invalid":
             summary["invalid"] += 1
+
+    summary["indicators_found"] = total_indicators_found
+    summary["indicators_by_type"] = indicators_by_type
 
     file_info = {
         "filename": filename,
@@ -700,6 +763,10 @@ def _persist_posts_batch(
     db.add_all(posts_to_add)
     db.flush()
 
+    # Extract indicators atomically within the same transaction
+    for p in posts_to_add:
+        extract_post(db, p)
+
     return len(posts_to_add), new_actors_count, new_marketplaces_count
 
 
@@ -767,6 +834,18 @@ def list_investigation_posts(
     )
     posts = db.execute(stmt).scalars().all()
 
+    # Pre-fetch indicator counts for this page of posts
+    post_ids = [p.id for p in posts]
+    ind_counts = {}
+    if post_ids:
+        cnt_stmt = (
+            select(ExtractedIndicator.post_id, func.count(ExtractedIndicator.id))
+            .where(ExtractedIndicator.post_id.in_(post_ids))
+            .group_by(ExtractedIndicator.post_id)
+        )
+        for pid, cnt in db.execute(cnt_stmt).all():
+            ind_counts[pid] = cnt
+
     items = []
     for p in posts:
         content_excerpt = p.content[:120].strip() if p.content else ""
@@ -784,6 +863,7 @@ def list_investigation_posts(
             "content_excerpt": content_excerpt,
             "dataset_name": p.dataset.name if p.dataset else "Unknown",
             "has_structured_indicators": has_indicators,
+            "indicator_count": ind_counts.get(p.id, 0),
         })
 
     meta = {

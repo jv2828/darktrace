@@ -7,7 +7,9 @@ DARKTRACE is a dark web threat-intelligence and actor-correlation platform devel
 - **Phase 2: Database Layer**: Complete 17-table relational schema with SQLAlchemy 2.0 ORM, PostgreSQL native ENUMs, partial indexes, check constraints, cascade semantics, Alembic migrations, and automated schema round-trip testing on an isolated test database.
 - **Phase 3: Authentication & Role Management**: Argon2id password hashing, JWT bearer tokens (HS256), stateless token validation with immediate deactivation revoking, 5-strike account lockout protection, anti-enumeration security, self-protection guards, role-based access control (Admin vs. Investigator), and administrative user management.
 - **Phase 4: Frontend Foundation & Investigation Workspaces**: Responsive dark-theme dashboard with Tailwind CSS v4 `@theme` tokens, React Router v7 layout with RBAC-guarded routes, full login experience, investigations CRUD management, real data-driven metric counters, accessible UI component library, and Vitest testing suite.
-- **Phase 5: Synthetic Datasets & Data Ingestion (Current)**: Deterministic synthetic darknet benchmarks (`alpha` and `beta`) with complete ground-truth actor correlation labels, strict RFC 5737 network safety, multi-channel ingestion (sample benchmarks, manual post entry, batch CSV/JSON upload with BOM and multiline quoted cell support), pre-flight validation previews, deduplication hashing, and full UI collection workbench.
+- **Phase 5: Synthetic Datasets & Data Ingestion**: Deterministic synthetic darknet benchmarks (`alpha` and `beta`) with complete ground-truth actor correlation labels, strict RFC 5737 network safety, multi-channel ingestion (sample benchmarks, manual post entry, batch CSV/JSON upload with BOM and multiline quoted cell support), pre-flight validation previews, deduplication hashing, and full UI collection workbench.
+- **Phase 6: Post Extraction & Indicator Analytics**: Pure Python regex extraction engine with linear-time guarantees, zero DB/network imports, span conflict priority resolution, and canonical normalisation. Supports PGP fingerprints, SSL certificates and metadata, cryptocurrency wallets (BTC, ETH, XMR), network artifacts (defanged IPv4/IPv6, RFC 5737 documentation scopes, contextual ports, Tor v3/v2 onions, domains), and server banners. Fully integrated with atomic ingestion, rerun conflict handling (409 `EVIDENCE_EXISTS`), stateless extraction preview, WCAG AA compliant color-coded `HighlightedText` visualizer, and dedicated post inspection view. Verified with $\ge 98\%$ (100% observed) precision and recall on Alpha and Beta ground truth.
+- **Phase 7: Pipeline Run System & Threat Matching Engine (Current)**: Multi-stage pipeline execution framework with background jobs, interrupted startup recovery, and active run isolation (`uq_pipeline_runs_active_investigation`). Pure Python cryptographic (`crypto.py`) and infrastructure (`infrastructure.py`) matching with prevalence suppression for decoys/escrow keys, specificity discount scaling ($S(N) = \min(1.0, 3/N)$), confidence weighting, non-standard port corroboration, and deterministic caveats. Fully integrated frontend correlation workbench with live stage polling, persona pair expansion, StrengthBar metrics, suppressed common indicator notices, stale run warnings, and persistent muted forensic disclaimers. 100% precision and recall on Alpha and Beta ground-truth benchmarks.
 
 ---
 
@@ -134,6 +136,9 @@ uvicorn app.main:app --reload --port 8000
 - Health Endpoint: `http://localhost:8000/api/v1/health`
 - Auth Endpoints: `http://localhost:8000/api/v1/auth/login`, `http://localhost:8000/api/v1/auth/me`
 - User Admin Endpoints: `http://localhost:8000/api/v1/users`
+- Pipeline & Stages: `http://localhost:8000/api/v1/pipeline/stages`, `http://localhost:8000/api/v1/scoring-configs/active`
+- Investigation Pipeline Runs: `POST/GET /api/v1/investigations/{id}/pipeline/runs`
+- Evidence & Correlated Pairs: `GET /api/v1/investigations/{id}/evidence`, `GET /api/v1/investigations/{id}/pairs`
 
 ---
 

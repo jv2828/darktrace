@@ -216,7 +216,7 @@ def generate_post_content(
     include_decoy: bool = False,
     decoy_pgp: Optional[str] = None,
     decoy_wallet: Optional[str] = None,
-) -> Tuple[str, Dict[str, Any]]:
+) -> Tuple[str, Dict[str, Any], List[Dict[str, str]]]:
     """Synthesize post text adhering to operator's stylistic and linguistic fingerprint."""
     topic_data = SHARED_TOPICS[post_idx % len(SHARED_TOPICS)]
     templates = topic_data["templates"]
@@ -229,20 +229,57 @@ def generate_post_content(
     btc_val = custom_btc if custom_btc is not None else op.crypto_btc
 
     structured_indicators: Dict[str, Any] = {}
+    planted_indicators: List[Dict[str, str]] = []
+
     if pgp_val:
         structured_indicators["pgp_fingerprint"] = pgp_val
+        planted_indicators.append({
+            "indicator_type": "pgp_fingerprint",
+            "normalised_value": pgp_val.upper(),
+            "placement": "structured",
+        })
     if btc_val:
         structured_indicators["wallet"] = btc_val
+        planted_indicators.append({
+            "indicator_type": "wallet_btc",
+            "normalised_value": btc_val.lower() if btc_val.startswith(("bc1", "tb1")) else btc_val,
+            "placement": "structured",
+        })
     if op.infra_domain:
         structured_indicators["domain"] = op.infra_domain
+        planted_indicators.append({
+            "indicator_type": "domain",
+            "normalised_value": op.infra_domain.lower(),
+            "placement": "structured",
+        })
     if op.infra_ip:
         structured_indicators["ip_address"] = op.infra_ip
+        planted_indicators.append({
+            "indicator_type": "ip_address",
+            "normalised_value": op.infra_ip,
+            "placement": "structured",
+        })
     if op.infra_cert:
         structured_indicators["ssl_cert_fingerprint"] = op.infra_cert
+        planted_indicators.append({
+            "indicator_type": "ssl_cert_fingerprint",
+            "normalised_value": op.infra_cert.upper(),
+            "placement": "structured",
+        })
     if op.infra_banner:
         structured_indicators["server_banner"] = op.infra_banner
+        planted_indicators.append({
+            "indicator_type": "server_banner",
+            "normalised_value": " ".join(op.infra_banner.lower().split()),
+            "placement": "structured",
+        })
     if op.infra_port:
         structured_indicators["port"] = op.infra_port
+        planted_indicators.append({
+            "indicator_type": "port",
+            "normalised_value": str(op.infra_port),
+            "placement": "structured",
+        })
 
     if op.is_short_text:
         short_sentences = [
@@ -257,7 +294,7 @@ def generate_post_content(
             raw_text = raw_text.lower()
         elif op.style_case == "Title Case":
             raw_text = raw_text.title()
-        return raw_text, structured_indicators
+        return raw_text, structured_indicators, planted_indicators
 
     phrase = op.signature_phrases[post_idx % len(op.signature_phrases)]
     body_parts = [op.greeting, base_sentence]
@@ -272,13 +309,33 @@ def generate_post_content(
     if pgp_val and post_idx % 2 == 0:
         formatted_pgp = format_pgp_in_text(pgp_val, post_idx)
         body_parts.append(f"Primary PGP fingerprint: {formatted_pgp}")
+        planted_indicators.append({
+            "indicator_type": "pgp_fingerprint",
+            "normalised_value": pgp_val.upper(),
+            "placement": "text",
+        })
     elif btc_val and post_idx % 2 == 1:
         body_parts.append(f"Escrow settlement wallet: {btc_val}")
+        planted_indicators.append({
+            "indicator_type": "wallet_btc",
+            "normalised_value": btc_val.lower() if btc_val.startswith(("bc1", "tb1")) else btc_val,
+            "placement": "text",
+        })
 
     if include_decoy and decoy_pgp and decoy_wallet and post_idx % 3 == 0:
         body_parts.append(
             f"Official marketplace support key: {decoy_pgp} | Platform escrow: {decoy_wallet}"
         )
+        planted_indicators.append({
+            "indicator_type": "pgp_fingerprint",
+            "normalised_value": decoy_pgp.upper(),
+            "placement": "text",
+        })
+        planted_indicators.append({
+            "indicator_type": "wallet_btc",
+            "normalised_value": decoy_wallet.lower() if decoy_wallet.startswith(("bc1", "tb1")) else decoy_wallet,
+            "placement": "text",
+        })
 
     body_parts.append(op.signoff)
 
@@ -299,7 +356,7 @@ def generate_post_content(
     elif op.style_case == "Title Case":
         text = text.title()
 
-    return text, structured_indicators
+    return text, structured_indicators, planted_indicators
 
 
 def generate_timestamp(
@@ -490,10 +547,11 @@ def build_alpha_dataset() -> Tuple[Dict[str, Any], Dict[str, Any]]:
     all_personas.sort(key=lambda x: (x[0], x[1]))
 
     posts: List[Dict[str, Any]] = []
+    manifest: List[Dict[str, Any]] = []
     for mkt, user, op in all_personas:
         num_posts = 18
         for p_idx in range(num_posts):
-            content, structured = generate_post_content(op, mkt, user, rng, p_idx)
+            content, structured, planted = generate_post_content(op, mkt, user, rng, p_idx)
             ts = generate_timestamp(op, rng, p_idx, num_posts)
             posts.append({
                 "marketplace": mkt,
@@ -503,8 +561,17 @@ def build_alpha_dataset() -> Tuple[Dict[str, Any], Dict[str, Any]]:
                 "source_reference": f"thread_{1000 + p_idx}",
                 "structured_indicators": structured,
             })
+            c_hash = hashlib.sha256(content.encode("utf-8")).hexdigest()[:16]
+            manifest.append({
+                "marketplace": mkt,
+                "username": user,
+                "timestamp": ts,
+                "content_hash": c_hash,
+                "indicators": planted,
+            })
 
     posts.sort(key=lambda x: (x["timestamp"] or "", x["marketplace"], x["username"], x["content"]))
+    manifest.sort(key=lambda x: (x["timestamp"] or "", x["marketplace"], x["username"], x["content_hash"]))
 
     sample_alpha = {
         "key": "alpha",
@@ -571,6 +638,7 @@ def build_alpha_dataset() -> Tuple[Dict[str, Any], Dict[str, Any]]:
             for op in sorted(operators, key=lambda x: x.operator_id)
         ],
         "pairs": pairs,
+        "indicator_manifest": manifest,
     }
 
     return sample_alpha, truth_alpha
@@ -722,11 +790,12 @@ def build_beta_dataset() -> Tuple[Dict[str, Any], Dict[str, Any]]:
     all_personas.sort(key=lambda x: (x[0], x[1]))
 
     posts: List[Dict[str, Any]] = []
+    manifest: List[Dict[str, Any]] = []
     for mkt, user, op in all_personas:
         num_posts = 7 if op.is_short_text else 25
         include_decoy = op.operator_id in ["op_beta_4", "op_beta_6", "op_beta_12"]
         for p_idx in range(num_posts):
-            content, structured = generate_post_content(
+            content, structured, planted = generate_post_content(
                 op, mkt, user, rng, p_idx,
                 include_decoy=include_decoy,
                 decoy_pgp=decoy_pgp,
@@ -741,8 +810,17 @@ def build_beta_dataset() -> Tuple[Dict[str, Any], Dict[str, Any]]:
                 "source_reference": f"thread_{2000 + p_idx}",
                 "structured_indicators": structured,
             })
+            c_hash = hashlib.sha256(content.encode("utf-8")).hexdigest()[:16]
+            manifest.append({
+                "marketplace": mkt,
+                "username": user,
+                "timestamp": ts,
+                "content_hash": c_hash,
+                "indicators": planted,
+            })
 
     posts.sort(key=lambda x: (x["timestamp"] or "", x["marketplace"], x["username"], x["content"]))
+    manifest.sort(key=lambda x: (x["timestamp"] or "", x["marketplace"], x["username"], x["content_hash"]))
 
     sample_beta = {
         "key": "beta",
@@ -827,6 +905,7 @@ def build_beta_dataset() -> Tuple[Dict[str, Any], Dict[str, Any]]:
             for op in sorted(operators, key=lambda x: x.operator_id)
         ],
         "pairs": pairs,
+        "indicator_manifest": manifest,
     }
 
     return sample_beta, truth_beta

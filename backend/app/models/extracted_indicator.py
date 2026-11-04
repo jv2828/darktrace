@@ -2,7 +2,7 @@
 
 import enum
 from datetime import datetime
-from typing import TYPE_CHECKING, List, Optional
+from typing import TYPE_CHECKING, Any, Dict, List, Optional
 from sqlalchemy import (
     Boolean,
     CheckConstraint,
@@ -16,7 +16,9 @@ from sqlalchemy import (
     Text,
     UniqueConstraint,
     func,
+    text,
 )
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
@@ -64,6 +66,10 @@ class ExtractedIndicator(Base):
             "(span_start IS NULL OR span_end IS NULL) OR (span_end >= span_start)",
             name="ck_extracted_indicators_span_range",
         ),
+        CheckConstraint(
+            "confidence IN ('high', 'medium', 'low')",
+            name="ck_extracted_indicators_confidence",
+        ),
     )
 
     id: Mapped[int] = mapped_column(Identity(), primary_key=True)
@@ -86,6 +92,18 @@ class ExtractedIndicator(Base):
     )
     extractor_version: Mapped[str] = mapped_column(String(50), nullable=False)
     is_valid_format: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    confidence: Mapped[str] = mapped_column(
+        String(10),
+        server_default="high",
+        default="high",
+        nullable=False,
+    )
+    details: Mapped[Dict[str, Any]] = mapped_column(
+        JSONB,
+        server_default=text("'{}'::jsonb"),
+        default=dict,
+        nullable=False,
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         server_default=func.now(),

@@ -17,7 +17,14 @@ import {
   commitManualPostApi,
   previewFileUploadApi,
   commitFileUploadApi,
+  previewExtractionApi,
 } from '../lib/api';
+import HighlightedText from '../components/common/HighlightedText';
+import {
+  getIndicatorConfig,
+  formatIndicatorDetails,
+  ALL_INDICATOR_TYPES,
+} from '../lib/indicatorTypes';
 import { downloadCsvTemplate, downloadJsonTemplate } from '../lib/templates';
 
 export default function CollectPage() {
@@ -291,10 +298,37 @@ function ManualEntryPanel({ investigationId, onBack }) {
 
   // Preview & submission state
   const [previewResult, setPreviewResult] = useState(null);
+  const [extractionPreview, setExtractionPreview] = useState(null);
+  const [extracting, setExtracting] = useState(false);
   const [validating, setValidating] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [committed, setCommitted] = useState(false);
   const toast = useToast();
+
+  const runExtractionPreview = useCallback(async () => {
+    if (!content.trim()) {
+      setExtractionPreview(null);
+      return;
+    }
+    setExtracting(true);
+    try {
+      const payload = buildPayload();
+      const res = await previewExtractionApi(content, payload.structured_indicators);
+      setExtractionPreview(res);
+    } catch (err) {
+      console.error('Failed to preview extraction:', err);
+    } finally {
+      setExtracting(false);
+    }
+  }, [content, pgp, wallet, domain, ip, cert, banner, port]);
+
+  // Debounced 300ms live extraction preview
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      runExtractionPreview();
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [runExtractionPreview]);
 
   function buildPayload() {
     const indicators = {};
@@ -449,6 +483,101 @@ function ManualEntryPanel({ investigationId, onBack }) {
             required
             className="w-full px-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-sky-400 font-mono leading-relaxed"
           />
+
+          {/* Live Extraction Preview Panel */}
+          {content.trim() && (
+            <div className="mt-3 p-3 rounded-lg bg-slate-950/80 border border-slate-800 space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                    Indicator Extraction Preview
+                  </span>
+                  {extracting && <Spinner size="sm" />}
+                </div>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={runExtractionPreview}
+                  loading={extracting}
+                  className="text-[11px] h-6 py-0 px-2"
+                >
+                  Refresh Preview
+                </Button>
+              </div>
+
+              {/* Text Stats Strip */}
+              {extractionPreview?.text_stats && (
+                <div className="flex items-center gap-4 text-[11px] font-mono text-slate-400 bg-slate-900/60 px-2.5 py-1 rounded border border-slate-800/80">
+                  <span>Chars: <strong className="text-slate-200">{extractionPreview.text_stats.char_count}</strong></span>
+                  <span>Words: <strong className="text-slate-200">{extractionPreview.text_stats.word_count}</strong></span>
+                  <span>Sentences: <strong className="text-slate-200">{extractionPreview.text_stats.sentence_count}</strong></span>
+                  <span className="ml-auto text-[10px] text-slate-400 font-sans">v{extractionPreview.extractor_version || '1.0.0'}</span>
+                </div>
+              )}
+
+              {/* Highlighted text preview */}
+              <div>
+                <span className="block text-[11px] font-medium text-slate-400 mb-1">
+                  Annotated Text Spans:
+                </span>
+                <HighlightedText
+                  text={content}
+                  indicators={extractionPreview?.indicators || []}
+                  className="max-h-48 overflow-y-auto"
+                />
+              </div>
+
+              {/* Extracted Indicators Table / Chips */}
+              {extractionPreview?.indicators?.length > 0 ? (
+                <div>
+                  <span className="block text-[11px] font-medium text-slate-400 mb-1.5">
+                    Detected Indicators ({extractionPreview.indicators.length}):
+                  </span>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead className="bg-slate-900 text-slate-400 text-[10px] uppercase border-b border-slate-800">
+                        <tr>
+                          <th className="px-2 py-1.5">Type</th>
+                          <th className="px-2 py-1.5">Normalized Value</th>
+                          <th className="px-2 py-1.5">Confidence</th>
+                          <th className="px-2 py-1.5">Method</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-800/60">
+                        {extractionPreview.indicators.map((ind, idx) => {
+                          const cfg = getIndicatorConfig(ind.indicator_type);
+                          return (
+                            <tr key={idx} className="hover:bg-slate-900/40">
+                              <td className="px-2 py-1 whitespace-nowrap">
+                                <span className={`inline-flex items-center gap-1 px-1.5 py-0.2 rounded text-[10px] font-semibold border ${cfg.badgeClass}`}>
+                                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: cfg.dotColor }} />
+                                  {cfg.shortLabel}
+                                </span>
+                              </td>
+                              <td className="px-2 py-1 text-slate-200 max-w-xs truncate" title={ind.normalised_value}>
+                                {ind.normalised_value}
+                              </td>
+                              <td className="px-2 py-1 uppercase text-[10px] text-emerald-400 font-bold">
+                                {ind.confidence || 'high'}
+                              </td>
+                              <td className="px-2 py-1 text-slate-400 text-[10px]">
+                                {ind.extraction_method}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-2.5 rounded bg-slate-900/40 border border-slate-800/80 text-xs text-slate-400 font-mono text-center">
+                  No technical threat indicators detected in text.
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Collapsible Structured Indicators Section */}
@@ -578,7 +707,20 @@ function FileUploadPanel({ investigationId, onBack }) {
   const [submitting, setSubmitting] = useState(false);
   const [previewData, setPreviewData] = useState(null);
   const [committedResult, setCommittedResult] = useState(null);
+  const [expandedRows, setExpandedRows] = useState(new Set());
   const toast = useToast();
+
+  function toggleRowExpanded(rowNum) {
+    setExpandedRows((prev) => {
+      const next = new Set(prev);
+      if (next.has(rowNum)) {
+        next.delete(rowNum);
+      } else {
+        next.add(rowNum);
+      }
+      return next;
+    });
+  }
 
   function handleFileSelect(e) {
     const file = e.target.files?.[0];
@@ -746,6 +888,35 @@ function FileUploadPanel({ investigationId, onBack }) {
                     Invalid: {previewData.summary?.invalid}
                   </span>
                 </div>
+
+                {/* Total indicators breakdown */}
+                {previewData.summary?.indicators_found !== undefined && (
+                  <div className="mt-3 pt-3 border-t border-slate-800/80">
+                    <span className="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Extracted Technical Indicators ({previewData.summary.indicators_found} Found across preview):
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {Object.entries(previewData.summary.indicators_by_type || {}).map(([typeKey, count]) => {
+                        const cfg = getIndicatorConfig(typeKey);
+                        return (
+                          <span
+                            key={typeKey}
+                            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono font-medium border ${cfg.badgeClass}`}
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: cfg.dotColor }} />
+                            <span>{cfg.shortLabel}:</span>
+                            <span className="font-bold">{count}</span>
+                          </span>
+                        );
+                      })}
+                      {previewData.summary.indicators_found === 0 && (
+                        <span className="text-[11px] text-slate-400 font-mono">
+                          No indicators detected in preview rows.
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Error Strategy Selection */}
@@ -801,37 +972,121 @@ function FileUploadPanel({ investigationId, onBack }) {
                     <th className="px-3 py-2.5">Author</th>
                     <th className="px-3 py-2.5">Timestamp</th>
                     <th className="px-3 py-2.5">Excerpt</th>
+                    <th className="px-3 py-2.5 text-center">Indicators</th>
                     <th className="px-3 py-2.5">Validation Notes</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800/60">
-                  {previewData.rows?.map((r) => (
-                    <tr key={r.row_number} className="hover:bg-slate-800/30">
-                      <td className="px-3 py-2 text-slate-400">#{r.row_number}</td>
-                      <td className="px-3 py-2 whitespace-nowrap">
-                        <StatusBadge status={r.status} />
-                      </td>
-                      <td className="px-3 py-2 text-slate-200">{r.marketplace || '-'}</td>
-                      <td className="px-3 py-2 text-slate-200">{r.username || '-'}</td>
-                      <td className="px-3 py-2 text-slate-400 whitespace-nowrap text-[11px]">
-                        {r.timestamp ? new Date(r.timestamp).toLocaleString() : 'N/A'}
-                      </td>
-                      <td className="px-3 py-2 font-sans text-slate-300 max-w-xs truncate">
-                        {r.content_excerpt || '-'}
-                      </td>
-                      <td className="px-3 py-2 text-[11px] max-w-sm">
-                        {r.errors?.length > 0 && (
-                          <div className="text-rose-400 font-sans">{r.errors.join('; ')}</div>
+                  {previewData.rows?.map((r) => {
+                    const isExpanded = expandedRows.has(r.row_number);
+                    const indCount = r.extracted?.length || 0;
+
+                    return (
+                      <React.Fragment key={r.row_number}>
+                        <tr className="hover:bg-slate-800/30">
+                          <td className="px-3 py-2 text-slate-400">#{r.row_number}</td>
+                          <td className="px-3 py-2 whitespace-nowrap">
+                            <StatusBadge status={r.status} />
+                          </td>
+                          <td className="px-3 py-2 text-slate-200">{r.marketplace || '-'}</td>
+                          <td className="px-3 py-2 text-slate-200">{r.username || '-'}</td>
+                          <td className="px-3 py-2 text-slate-400 whitespace-nowrap text-[11px]">
+                            {r.timestamp ? new Date(r.timestamp).toLocaleString() : 'N/A'}
+                          </td>
+                          <td className="px-3 py-2 font-sans text-slate-300 max-w-xs truncate">
+                            {r.content_excerpt || '-'}
+                          </td>
+                          <td className="px-3 py-2 whitespace-nowrap text-center">
+                            <button
+                              type="button"
+                              onClick={() => toggleRowExpanded(r.row_number)}
+                              className={`px-2 py-0.5 rounded text-[11px] font-mono font-medium border transition-colors cursor-pointer inline-flex items-center gap-1 ${
+                                indCount > 0
+                                  ? 'bg-purple-950/60 text-purple-300 border-purple-800/80 hover:bg-purple-900/60'
+                                  : 'bg-slate-900 text-slate-500 border-slate-800 hover:text-slate-400'
+                              }`}
+                            >
+                              <span>{isExpanded ? '▾' : '▸'}</span>
+                              <span>Indicators ({indCount})</span>
+                            </button>
+                          </td>
+                          <td className="px-3 py-2 text-[11px] max-w-sm">
+                            {r.errors?.length > 0 && (
+                              <div className="text-rose-400 font-sans">{r.errors.join('; ')}</div>
+                            )}
+                            {r.warnings?.length > 0 && (
+                              <div className="text-amber-400 font-sans">{r.warnings.join('; ')}</div>
+                            )}
+                            {r.errors?.length === 0 && r.warnings?.length === 0 && (
+                              <span className="text-slate-400 font-sans">Passed</span>
+                            )}
+                          </td>
+                        </tr>
+
+                        {/* Expandable Extracted Indicators Row */}
+                        {isExpanded && (
+                          <tr className="bg-slate-950/90 border-b border-slate-800">
+                            <td colSpan={8} className="px-4 py-3 space-y-2">
+                              <div className="flex items-center justify-between text-xs text-slate-300">
+                                <span className="font-semibold uppercase tracking-wider text-[11px]">
+                                  Extracted Indicators for Row #{r.row_number} ({indCount})
+                                </span>
+                                {r.text_stats && (
+                                  <span className="font-mono text-[11px] text-slate-400">
+                                    Chars: {r.text_stats.char_count} • Words: {r.text_stats.word_count}
+                                  </span>
+                                )}
+                              </div>
+
+                              {r.content && (
+                                <div>
+                                  <span className="block text-[11px] font-medium text-slate-400 mb-1">
+                                    Annotated Post Content:
+                                  </span>
+                                  <HighlightedText
+                                    text={r.content}
+                                    indicators={r.extracted || []}
+                                    className="max-h-36 overflow-y-auto text-xs"
+                                  />
+                                </div>
+                              )}
+
+                              {indCount > 0 ? (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 pt-1">
+                                  {r.extracted.map((ind, iIdx) => {
+                                    const cfg = getIndicatorConfig(ind.indicator_type);
+                                    return (
+                                      <div
+                                        key={iIdx}
+                                        className="p-2 rounded bg-slate-900 border border-slate-800 flex flex-col gap-1 text-[11px]"
+                                      >
+                                        <div className="flex items-center justify-between">
+                                          <span className={`inline-flex items-center gap-1 px-1.5 py-0.2 rounded text-[10px] font-semibold border ${cfg.badgeClass}`}>
+                                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: cfg.dotColor }} />
+                                            {cfg.shortLabel}
+                                          </span>
+                                          <span className="text-[10px] uppercase font-bold text-emerald-400">
+                                            {ind.confidence}
+                                          </span>
+                                        </div>
+                                        <div className="font-mono text-slate-200 truncate" title={ind.normalised_value}>
+                                          {ind.normalised_value}
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              ) : (
+                                <p className="text-xs text-slate-500 font-mono italic">
+                                  No indicators detected in this post text.
+                                </p>
+                              )}
+                            </td>
+                          </tr>
                         )}
-                        {r.warnings?.length > 0 && (
-                          <div className="text-amber-400 font-sans">{r.warnings.join('; ')}</div>
-                        )}
-                        {r.errors?.length === 0 && r.warnings?.length === 0 && (
-                          <span className="text-slate-400 font-sans">Passed</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                      </React.Fragment>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

@@ -28,7 +28,10 @@ wheels/
 .installed.cfg
 *.egg
 
-# Testing & Coverage
+# Reports
+backend/reports/
+reports/
+
 .pytest_cache/
 .coverage
 htmlcov/

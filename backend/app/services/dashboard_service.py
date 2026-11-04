@@ -1,5 +1,6 @@
 """Business logic and aggregate queries for Dashboard summary metrics."""
 
+from decimal import Decimal
 from typing import Any, Dict, List
 from sqlalchemy import distinct, func, select
 from sqlalchemy.orm import Session, joinedload
@@ -51,15 +52,30 @@ def get_dashboard_summary(db: Session, user: User) -> Dict[str, Any]:
     total_indicators = db.execute(indicator_count_stmt).scalar() or 0
 
     # 4. Potential Linkages (Correlation results linked to user's investigations)
-    if is_admin:
-        linkage_count_stmt = select(func.count(CorrelationResult.id))
-    else:
-        linkage_count_stmt = (
-            select(func.count(distinct(CorrelationResult.id)))
-            .join(PipelineRun, CorrelationResult.pipeline_run_id == PipelineRun.id)
-            .join(Investigation, PipelineRun.investigation_id == Investigation.id)
-            .where(Investigation.created_by == user.id)
+    from app.services.scoring_config_service import get_or_create_default
+    active_cfg = get_or_create_default(db)
+    scoring_cfg = active_cfg.thresholds.get("scoring", {}) if active_cfg.thresholds else {}
+    pot_link_thresh = float(scoring_cfg.get("potential_link", 0.45))
+
+    latest_run_subq = (
+        select(
+            PipelineRun.investigation_id,
+            func.max(PipelineRun.id).label("max_run_id"),
         )
+        .where(PipelineRun.status == "completed")
+        .group_by(PipelineRun.investigation_id)
+        .subquery()
+    )
+
+    linkage_count_stmt = (
+        select(func.count(CorrelationResult.id))
+        .join(latest_run_subq, CorrelationResult.pipeline_run_id == latest_run_subq.c.max_run_id)
+        .join(Investigation, latest_run_subq.c.investigation_id == Investigation.id)
+        .where(CorrelationResult.combined_score >= Decimal(str(pot_link_thresh)))
+    )
+    if not is_admin:
+        linkage_count_stmt = linkage_count_stmt.where(Investigation.created_by == user.id)
+
     total_potential_linkages = db.execute(linkage_count_stmt).scalar() or 0
 
     # 5. Total Datasets (Scoped)

@@ -692,5 +692,3661 @@
       "shared_dimensions": [],
       "case_type": "control"
     }
+  ],
+  "indicator_manifest": [
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-01-07T01:26:21Z",
+      "content_hash": "a6ec0d7afbed4240",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-01-07T06:46:56Z",
+      "content_hash": "180de7c85abb93fa",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-01-07T08:14:04Z",
+      "content_hash": "0bd4a1f23c2f5d0a",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-01-07T08:59:50Z",
+      "content_hash": "180de7c85abb93fa",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-01-07T13:27:38Z",
+      "content_hash": "8dad44918e3e3ed8",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-01-07T14:53:05Z",
+      "content_hash": "4d99ad91d9ee81ee",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-01-07T15:39:54Z",
+      "content_hash": "3cf4eab1c5d58f35",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-01-07T16:24:17Z",
+      "content_hash": "6fd4b574fa4ac1c0",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-01-07T19:55:02Z",
+      "content_hash": "687ed7f55a84f6d2",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-01-07T23:23:18Z",
+      "content_hash": "a6ec0d7afbed4240",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-01-12T01:03:13Z",
+      "content_hash": "86d414cdf9787331",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-01-12T01:53:34Z",
+      "content_hash": "184471f490032b8c",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-01-12T08:27:44Z",
+      "content_hash": "e984e5beede7016f",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-01-12T10:47:34Z",
+      "content_hash": "64b5602db3a4171f",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-01-12T10:48:11Z",
+      "content_hash": "8233aec8870d6136",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-01-12T13:04:32Z",
+      "content_hash": "973adfe6ec0bd0b9",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-01-12T14:43:15Z",
+      "content_hash": "89718f8fca58cecc",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-01-12T14:57:36Z",
+      "content_hash": "973adfe6ec0bd0b9",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-01-12T15:26:56Z",
+      "content_hash": "973adfe6ec0bd0b9",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-01-12T18:20:53Z",
+      "content_hash": "1fa8c35c84305e05",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-01-17T01:57:49Z",
+      "content_hash": "dd5528157729e2d9",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-01-17T02:51:41Z",
+      "content_hash": "5abf3e6a8c839c95",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-01-17T07:12:18Z",
+      "content_hash": "bc71845cfb853965",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-01-17T12:02:45Z",
+      "content_hash": "41c310e47708f4fd",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-01-17T12:40:19Z",
+      "content_hash": "edaccf9a106ed6f9",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-01-17T12:42:31Z",
+      "content_hash": "41c310e47708f4fd",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-01-17T14:31:25Z",
+      "content_hash": "41c310e47708f4fd",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-01-17T14:52:02Z",
+      "content_hash": "114229b1a8b8067a",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-01-17T15:14:41Z",
+      "content_hash": "a5ab15825a912d18",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-01-17T15:49:35Z",
+      "content_hash": "59bd338a0b5a1195",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-01-22T03:52:35Z",
+      "content_hash": "35666dad0cd005ac",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-01-22T04:56:48Z",
+      "content_hash": "35666dad0cd005ac",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-01-22T06:37:47Z",
+      "content_hash": "ea8aa8677881372e",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-01-22T07:23:48Z",
+      "content_hash": "ea8aa8677881372e",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-01-22T08:33:59Z",
+      "content_hash": "77487c928f2a768b",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-01-22T10:41:44Z",
+      "content_hash": "e4bbc1735c4dabd2",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-01-22T10:46:59Z",
+      "content_hash": "e4bbc1735c4dabd2",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-01-22T10:48:01Z",
+      "content_hash": "b0a2e49b91877d51",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-01-22T16:17:04Z",
+      "content_hash": "a7a5cd1400a3930d",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-01-22T17:47:09Z",
+      "content_hash": "0c26087b0e52d5f1",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-01-27T01:00:22Z",
+      "content_hash": "8ff32c3d05e1f7a5",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-01-27T03:06:56Z",
+      "content_hash": "303cf37a6970f136",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-01-27T09:49:27Z",
+      "content_hash": "4a96b344bd6fad74",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-01-27T10:49:59Z",
+      "content_hash": "122b3f6e087346f1",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-01-27T11:20:03Z",
+      "content_hash": "f9880b16d6306883",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-01-27T11:50:30Z",
+      "content_hash": "2ad517c243e2868c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-01-27T13:27:04Z",
+      "content_hash": "8ac06c8ea6317e3c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-01-27T13:53:01Z",
+      "content_hash": "27776ecdf9e1277c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-01-27T17:56:45Z",
+      "content_hash": "0667b3615d92135f",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-01-27T19:10:51Z",
+      "content_hash": "98dfd27a33559050",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-02-01T00:07:56Z",
+      "content_hash": "eab4a556fe08013f",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-02-01T04:24:54Z",
+      "content_hash": "d67e3c40fbab4517",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-02-01T10:20:31Z",
+      "content_hash": "2cffc344e2888d29",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-02-01T10:30:32Z",
+      "content_hash": "2cffc344e2888d29",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-02-01T10:51:44Z",
+      "content_hash": "68a4f891290c62db",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-02-01T11:06:06Z",
+      "content_hash": "c04eff44ce4fb9f0",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-02-01T13:08:30Z",
+      "content_hash": "937c4a036dec10d3",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-02-01T13:42:54Z",
+      "content_hash": "2a8f94b15a73a361",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-02-01T14:41:31Z",
+      "content_hash": "76b832d9d4a0108f",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-02-01T16:01:11Z",
+      "content_hash": "f040c144686d2ba8",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-02-06T02:47:47Z",
+      "content_hash": "8d25eec16c5089b2",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-02-06T03:35:09Z",
+      "content_hash": "84a9eece399f4081",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-02-06T06:32:05Z",
+      "content_hash": "77ef97b3007bf499",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-02-06T06:59:23Z",
+      "content_hash": "d2be7da5465414b1",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-02-06T08:35:15Z",
+      "content_hash": "816e2afecb8c67e8",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-02-06T12:32:19Z",
+      "content_hash": "6df63cf1a9da5014",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-02-06T13:27:26Z",
+      "content_hash": "816e2afecb8c67e8",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-02-06T13:29:44Z",
+      "content_hash": "7b42d62dcab0fe25",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-02-06T18:29:09Z",
+      "content_hash": "7476f0d6508de4d7",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-02-06T19:59:26Z",
+      "content_hash": "687ed7f55a84f6d2",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-02-11T00:38:13Z",
+      "content_hash": "9fe7d8e606c4c563",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-02-11T01:14:17Z",
+      "content_hash": "184471f490032b8c",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-02-11T06:38:04Z",
+      "content_hash": "9302847c6a5776b0",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-02-11T07:03:15Z",
+      "content_hash": "8233aec8870d6136",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-02-11T08:43:41Z",
+      "content_hash": "c6705d21c9a853b1",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-02-11T13:25:44Z",
+      "content_hash": "c6705d21c9a853b1",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-02-11T14:15:47Z",
+      "content_hash": "925a85718c18f4e7",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-02-11T15:08:51Z",
+      "content_hash": "973adfe6ec0bd0b9",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-02-11T15:10:38Z",
+      "content_hash": "850b1d449c68e94a",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-02-11T15:10:50Z",
+      "content_hash": "aab03e122f7bb549",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-02-16T01:01:24Z",
+      "content_hash": "dd5528157729e2d9",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-02-16T06:46:31Z",
+      "content_hash": "edaccf9a106ed6f9",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-02-16T08:25:46Z",
+      "content_hash": "b23af02d957dd149",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-02-16T09:07:56Z",
+      "content_hash": "8360982125d5ee9a",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-02-16T10:12:26Z",
+      "content_hash": "468e147fe99aa9f1",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-02-16T12:19:06Z",
+      "content_hash": "6c78e3dc1d8a2d89",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-02-16T13:48:57Z",
+      "content_hash": "9c60609afa6f6cde",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-02-16T16:55:02Z",
+      "content_hash": "59bd338a0b5a1195",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-02-16T18:37:27Z",
+      "content_hash": "2a2d7d1e9fd09c35",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-02-16T23:43:40Z",
+      "content_hash": "5abf3e6a8c839c95",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-02-22T02:31:16Z",
+      "content_hash": "bfac53cbc373281c",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-02-22T03:43:51Z",
+      "content_hash": "bfac53cbc373281c",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-02-22T09:15:12Z",
+      "content_hash": "4e24de1ae4f8ceef",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-02-22T10:38:02Z",
+      "content_hash": "ea8aa8677881372e",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-02-22T10:39:36Z",
+      "content_hash": "77487c928f2a768b",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-02-22T12:34:49Z",
+      "content_hash": "fd28720c60bfc2c8",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-02-22T14:12:52Z",
+      "content_hash": "0c26087b0e52d5f1",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-02-22T14:36:43Z",
+      "content_hash": "468368358f4b3cc9",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-02-22T14:53:58Z",
+      "content_hash": "77487c928f2a768b",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-02-22T15:14:08Z",
+      "content_hash": "cc2ef80725697655",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-02-27T03:10:53Z",
+      "content_hash": "8ff32c3d05e1f7a5",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-02-27T07:42:30Z",
+      "content_hash": "122b3f6e087346f1",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-02-27T09:42:37Z",
+      "content_hash": "f9880b16d6306883",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-02-27T10:47:55Z",
+      "content_hash": "acd7a37a3d8e2b16",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-02-27T13:48:03Z",
+      "content_hash": "1d6a8ea9fe2c4fe9",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-02-27T14:35:53Z",
+      "content_hash": "7be08536ff5fcf98",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-02-27T15:08:27Z",
+      "content_hash": "b63647d96906d39c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-02-27T15:19:52Z",
+      "content_hash": "ff13b69118053a46",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-02-27T16:45:12Z",
+      "content_hash": "81d16e858df8a6b8",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-02-27T22:40:27Z",
+      "content_hash": "563ea33a48163ecf",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-03-04T08:13:42Z",
+      "content_hash": "633881cb33d9aed3",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-03-04T08:33:55Z",
+      "content_hash": "bbb73b3ef3473499",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-03-04T12:18:13Z",
+      "content_hash": "5ef917649553bcb4",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-03-04T12:29:15Z",
+      "content_hash": "68a4f891290c62db",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-03-04T13:06:44Z",
+      "content_hash": "2fece4553585017a",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-03-04T14:01:42Z",
+      "content_hash": "f040c144686d2ba8",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-03-04T14:40:10Z",
+      "content_hash": "506e1885707bc91c",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-03-04T15:16:48Z",
+      "content_hash": "c04eff44ce4fb9f0",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-03-04T22:00:21Z",
+      "content_hash": "d67e3c40fbab4517",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-03-04T23:39:34Z",
+      "content_hash": "072e65a83590701c",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-03-09T01:37:36Z",
+      "content_hash": "5d59deeaeeface10",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-03-09T03:16:10Z",
+      "content_hash": "9447fc0e4a8f3aac",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-03-09T07:16:25Z",
+      "content_hash": "6dae6c83cdbf1297",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-03-09T07:59:34Z",
+      "content_hash": "180de7c85abb93fa",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-03-09T11:50:36Z",
+      "content_hash": "44215d160014a908",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-03-09T12:49:49Z",
+      "content_hash": "3cf4eab1c5d58f35",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-03-09T13:29:28Z",
+      "content_hash": "997fac9c008f2286",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-03-09T15:51:55Z",
+      "content_hash": "51afd2369114a4fe",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-03-09T16:21:17Z",
+      "content_hash": "d648f6df4b1c628e",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-03-09T17:04:24Z",
+      "content_hash": "7476f0d6508de4d7",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-03-14T02:45:27Z",
+      "content_hash": "86d414cdf9787331",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-03-14T08:41:34Z",
+      "content_hash": "973adfe6ec0bd0b9",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-03-14T11:17:28Z",
+      "content_hash": "c6705d21c9a853b1",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-03-14T11:19:25Z",
+      "content_hash": "9302847c6a5776b0",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-03-14T11:32:30Z",
+      "content_hash": "c6705d21c9a853b1",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-03-14T11:41:19Z",
+      "content_hash": "9302847c6a5776b0",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-03-14T15:34:27Z",
+      "content_hash": "56a6fc64a2c4fb12",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-03-14T17:29:33Z",
+      "content_hash": "d2ef5f29ed953709",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-03-14T19:17:22Z",
+      "content_hash": "e187b418ba1b9a3e",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-03-14T22:41:27Z",
+      "content_hash": "d63125700427cf63",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-03-19T04:29:11Z",
+      "content_hash": "06b894aaa9bb5b7d",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-03-19T08:59:48Z",
+      "content_hash": "bc71845cfb853965",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-03-19T09:18:32Z",
+      "content_hash": "41c310e47708f4fd",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-03-19T09:57:33Z",
+      "content_hash": "56a47dc3b8c07f03",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-03-19T09:59:48Z",
+      "content_hash": "55f25c58513d01c0",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-03-19T11:32:41Z",
+      "content_hash": "5ab979bb0c0da010",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-03-19T12:15:17Z",
+      "content_hash": "55f25c58513d01c0",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-03-19T17:55:00Z",
+      "content_hash": "2a2d7d1e9fd09c35",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-03-19T18:53:34Z",
+      "content_hash": "4551f8ddc3415c19",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-03-19T22:04:56Z",
+      "content_hash": "a605250fe1bf2561",
+      "indicators": []
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-03-24T00:24:20Z",
+      "content_hash": "d685dbd64de6e3a2",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-03-24T02:02:53Z",
+      "content_hash": "e4bd30174dcacc3d",
+      "indicators": []
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-03-24T06:15:14Z",
+      "content_hash": "e0880f760cfcbdcb",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-03-24T06:29:39Z",
+      "content_hash": "62daa0fddf861aec",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-03-24T09:52:48Z",
+      "content_hash": "4e24de1ae4f8ceef",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-03-24T10:26:31Z",
+      "content_hash": "e4bbc1735c4dabd2",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-03-24T10:54:26Z",
+      "content_hash": "dc66af48febe661b",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-03-24T13:07:56Z",
+      "content_hash": "952ec9e5d93f1e11",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-03-24T13:57:34Z",
+      "content_hash": "4e24de1ae4f8ceef",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-03-24T18:56:34Z",
+      "content_hash": "2a79a2e31c46a87e",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-03-29T01:20:21Z",
+      "content_hash": "bdcc0a632b7ea837",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-03-29T02:35:09Z",
+      "content_hash": "303cf37a6970f136",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-03-29T06:34:13Z",
+      "content_hash": "f9880b16d6306883",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-03-29T08:01:37Z",
+      "content_hash": "f9880b16d6306883",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-03-29T10:09:14Z",
+      "content_hash": "4a96b344bd6fad74",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-03-29T11:27:23Z",
+      "content_hash": "cfb8bfde7958d012",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-03-29T11:55:25Z",
+      "content_hash": "2ad517c243e2868c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-03-29T12:14:51Z",
+      "content_hash": "8ac06c8ea6317e3c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-03-29T14:37:16Z",
+      "content_hash": "6661b2849efed609",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-03-29T19:41:21Z",
+      "content_hash": "ccb380fc555fd691",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "nightshade_trader",
+      "timestamp": "2026-04-03T00:48:53Z",
+      "content_hash": "072e65a83590701c",
+      "indicators": []
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "beacon_light",
+      "timestamp": "2026-04-03T07:59:22Z",
+      "content_hash": "633881cb33d9aed3",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "iron_craft",
+      "timestamp": "2026-04-03T10:01:02Z",
+      "content_hash": "68a4f891290c62db",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "harbor_master",
+      "timestamp": "2026-04-03T10:14:00Z",
+      "content_hash": "bbb73b3ef3473499",
+      "indicators": [
+        {
+          "indicator_type": "domain",
+          "normalised_value": "relay.fictional-mesh.example",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ip_address",
+          "normalised_value": "198.51.100.42",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "ssl_cert_fingerprint",
+          "normalised_value": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "server_banner",
+          "normalised_value": "nginx/1.18.0 (ubuntu)",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "port",
+          "normalised_value": "443",
+          "placement": "structured"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "iron_artisan",
+      "timestamp": "2026-04-03T10:24:00Z",
+      "content_hash": "5ef917649553bcb4",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "iron_weaver",
+      "timestamp": "2026-04-03T10:45:13Z",
+      "content_hash": "c04eff44ce4fb9f0",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "E4A18B9C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q9d4k2t8x7m1w5p3z0s6y8v2c4b6n8m0k2j4h6f",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Velvet Bazaar",
+      "username": "silver_quill",
+      "timestamp": "2026-04-03T12:27:11Z",
+      "content_hash": "8d4ceff8a08d535c",
+      "indicators": [
+        {
+          "indicator_type": "pgp_fingerprint",
+          "normalised_value": "778899AABBCCDDEEFF0011223344556677889900",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qdm7r32q8ta3w8w4e9gpvd6dd7q9ryqp3np6ks8",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Tidepool Exchange",
+      "username": "drift_courier",
+      "timestamp": "2026-04-03T13:38:27Z",
+      "content_hash": "a0b20731b16cb5f8",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1qp40s9885s4qsxk3mf20378jn0k7rprkf8gm9uw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Greywharf",
+      "username": "current_runner",
+      "timestamp": "2026-04-03T15:27:10Z",
+      "content_hash": "506e1885707bc91c",
+      "indicators": [
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "structured"
+        },
+        {
+          "indicator_type": "wallet_btc",
+          "normalised_value": "bc1q0tu6rfc957ztc43e4dwdn9u2sgk4ye3kavpnxw",
+          "placement": "text"
+        }
+      ]
+    },
+    {
+      "marketplace": "Lanternroot",
+      "username": "dusk_merchant",
+      "timestamp": "2026-04-03T23:02:19Z",
+      "content_hash": "072e65a83590701c",
+      "indicators": []
+    }
   ]
 }

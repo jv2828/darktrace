@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
@@ -151,7 +152,8 @@ export default function PostsTable({ investigationId }) {
                   <th className="px-4 py-3 font-medium">Posted At (UTC)</th>
                   <th className="px-4 py-3 font-medium">Content Excerpt</th>
                   <th className="px-4 py-3 font-medium">Dataset</th>
-                  <th className="px-4 py-3 font-medium">Indicators</th>
+                  <th className="px-4 py-3 font-medium text-center">Indicators</th>
+                  <th className="px-4 py-3 font-medium text-right">Action</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/60 font-mono">
@@ -169,19 +171,39 @@ export default function PostsTable({ investigationId }) {
                       {post.posted_at ? new Date(post.posted_at).toLocaleString() : 'N/A'}
                     </td>
                     <td className="px-4 py-3 font-sans text-slate-300 max-w-md">
-                      <p className="line-clamp-2 leading-relaxed">{post.content_excerpt}</p>
+                      <Link
+                        to={`/investigations/${investigationId}/posts/${post.id}`}
+                        className="hover:text-sky-300 transition-colors block"
+                      >
+                        <p className="line-clamp-2 leading-relaxed">{post.content_excerpt}</p>
+                      </Link>
                     </td>
                     <td className="px-4 py-3 text-slate-400 whitespace-nowrap text-[11px]">
                       {post.dataset_name}
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
-                      {post.has_structured_indicators ? (
-                        <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-950 text-emerald-300 border border-emerald-800">
-                          Structured
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                      <Link
+                        to={`/investigations/${investigationId}/posts/${post.id}`}
+                        className="inline-block"
+                      >
+                        <span
+                          className={`inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[11px] font-bold border transition-colors ${
+                            (post.indicator_count || 0) > 0
+                              ? 'bg-purple-950/60 text-purple-300 border-purple-800/80 hover:bg-purple-900/60'
+                              : 'bg-slate-900 text-slate-500 border-slate-800'
+                          }`}
+                        >
+                          {post.indicator_count || 0}
                         </span>
-                      ) : (
-                        <span className="text-slate-400 text-[11px]">-</span>
-                      )}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-3 whitespace-nowrap text-right">
+                      <Link
+                        to={`/investigations/${investigationId}/posts/${post.id}`}
+                        className="text-sky-400 hover:text-sky-300 font-medium text-[11px]"
+                      >
+                        Inspect &rarr;
+                      </Link>
                     </td>
                   </tr>
                 ))}

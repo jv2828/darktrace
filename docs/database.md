@@ -141,6 +141,8 @@ Raw forum posts, market listings, or message communications.
 - `posted_at` (TIMESTAMPTZ NULL): Timestamp reported on platform.
 - `source_reference` (VARCHAR(512) NULL): Original external URL or dump offset.
 - `raw_metadata` (JSONB): Unstructured vendor, category, or header fields.
+- `extractor_version` (VARCHAR(20) NULL): Version string of the extraction engine (e.g. `'1.0.0'`).
+- `extracted_at` (TIMESTAMPTZ NULL): UTC timestamp when indicator extraction was executed on this post.
 - `ingested_by` (INTEGER FK users.id SET NULL): Analyst who triggered ingestion.
 - `created_at` (TIMESTAMPTZ): System ingestion timestamp.
 - **Unique Constraint:** `(dataset_id, dedupe_hash)` prevents duplicate records within a dataset.
@@ -157,10 +159,13 @@ Atomic technical artifacts parsed from post content (cryptographic wallets, onio
 - `extraction_method` (extraction_method ENUM: `'regex'`, `'structured_field'`, `'manual'`).
 - `extractor_version` (VARCHAR(50)): Version stamp of extraction algorithm.
 - `is_valid_format` (BOOLEAN): Checksum / RFC validation flag.
+- `confidence` (VARCHAR(10) NOT NULL default 'high'): Qualitative confidence rating (`'high'`, `'medium'`, `'low'`).
+- `details` (JSONB NOT NULL default '{}'): Forensic metadata (IP scope, SSL algorithm, port protocol, occurrences, all_spans, also_in_structured_field).
 - `created_at` (TIMESTAMPTZ): Extraction timestamp.
 - **Unique Constraint:** `(post_id, indicator_type, normalised_value)`.
 - **Index:** `(indicator_type, normalised_value)` for high-speed cross-actor indicator lookups.
 - **Check Constraint:** `(span_start IS NULL OR span_end IS NULL) OR (span_end >= span_start)`.
+- **Check Constraint:** `confidence IN ('high', 'medium', 'low')`.
 
 ### 10. `scoring_configs`
 Mathematical parameter profiles governing correlation weights and thresholds.
@@ -185,6 +190,7 @@ Execution run instances tracking multi-stage forensic analysis passes.
 - `started_at` / `finished_at` (TIMESTAMPTZ NULL): Execution timestamps.
 - `error_message` (TEXT NULL): Failure diagnostics.
 - `created_at` (TIMESTAMPTZ): Dispatch timestamp.
+- **Partial Unique Index:** `uq_pipeline_runs_active_investigation` on `(investigation_id) WHERE status IN ('queued', 'running')` guarantees at most one active pipeline execution per investigation at any time.
 
 ### 12. `pipeline_stage_runs`
 Progress and metrics tracking for individual analytical modules.
@@ -213,7 +219,7 @@ Atomic pairwise analytical observations connecting or distinguishing two threat 
 - `created_at` (TIMESTAMPTZ): Generation timestamp.
 - **Check Constraint:** `actor_a_id < actor_b_id` enforces strict canonical ordering and prevents reflexive or inverted duplicate pairs.
 - **Check Constraint:** `strength >= 0 AND strength <= 1` bounds score validity.
-- **Index:** `(pipeline_run_id, actor_a_id, actor_b_id)`.
+- **Indexes:** `(pipeline_run_id, actor_a_id, actor_b_id)` and `(pipeline_run_id, dimension)`.
 
 ### 14. `evidence_sources`
 Full forensic provenance linking an abstract evidence record back to its source post or indicator.
@@ -222,6 +228,7 @@ Full forensic provenance linking an abstract evidence record back to its source 
 - `post_id` (INTEGER FK posts.id SET NULL NULL): Source post ground truth.
 - `indicator_id` (INTEGER FK extracted_indicators.id SET NULL NULL): Source indicator ground truth.
 - **Check Constraint:** `post_id IS NOT NULL OR indicator_id IS NOT NULL` guarantees every evidence source points to at least one concrete piece of evidence.
+- **Index:** `ix_evidence_sources_evidence_id` on `(evidence_id)`.
 
 ### 15. `correlation_results`
 Consolidated affinity metric evaluated across all available evidence dimensions for an actor pair.

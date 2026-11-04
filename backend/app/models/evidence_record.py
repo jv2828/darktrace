@@ -50,6 +50,7 @@ class EvidenceRecord(Base):
         CheckConstraint("actor_a_id < actor_b_id", name="ck_evidence_records_actor_pair_order"),
         CheckConstraint("strength >= 0 AND strength <= 1", name="ck_evidence_records_strength_range"),
         Index("ix_evidence_records_run_actors", "pipeline_run_id", "actor_a_id", "actor_b_id"),
+        Index("ix_evidence_records_run_dimension", "pipeline_run_id", "dimension"),
     )
 
     id: Mapped[int] = mapped_column(Identity(), primary_key=True)
