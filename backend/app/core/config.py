@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     LOCKOUT_MINUTES: int = 15
 
     # CORS Configuration
-    CORS_ORIGINS: str = "http://localhost:5173"
+    CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000"
 
     model_config = SettingsConfigDict(
         env_file=(str(ROOT_ENV_FILE), ".env"),
