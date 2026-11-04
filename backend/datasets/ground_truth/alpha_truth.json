@@ -1,0 +1,696 @@
+{
+  "key": "alpha",
+  "name": "Alpha Ground Truth Labels",
+  "version": 1,
+  "generator_seed": 42,
+  "operators": [
+    {
+      "operator_id": "op_alpha_1",
+      "name": "The Iron Artisan",
+      "description": "Strong positive actor sharing PGP, BTC wallet, stylistic fingerprint, and active hours across 3 marketplaces.",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "iron_artisan"
+        },
+        {
+          "marketplace": "Tidepool Exchange",
+          "username": "iron_craft"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "iron_weaver"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_alpha_2",
+      "name": "Night Owl Merchant",
+      "description": "Operator sharing stylometric habits and night active window, but using zero shared crypto indicators.",
+      "personas": [
+        {
+          "marketplace": "Lanternroot",
+          "username": "dusk_merchant"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "nightshade_trader"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_alpha_3",
+      "name": "Infrastructure Operator",
+      "description": "Operator with 2 personas sharing backend host, IP, and TLS cert, but completely differing in writing style and active hours.",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "harbor_master"
+        },
+        {
+          "marketplace": "Lanternroot",
+          "username": "beacon_light"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_alpha_4",
+      "name": "Tidepool Drift Courier",
+      "description": "First hard negative operator operating in afternoon UTC window with no shared indicators.",
+      "personas": [
+        {
+          "marketplace": "Tidepool Exchange",
+          "username": "drift_courier"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_alpha_5",
+      "name": "Greywharf Current Runner",
+      "description": "Second hard negative operator sharing the same afternoon UTC window as drift_courier but distinct person.",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "current_runner"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_alpha_6",
+      "name": "The Silver Quill",
+      "description": "Single-persona control vendor on Velvet Bazaar.",
+      "personas": [
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "silver_quill"
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [
+        "behavioural"
+      ],
+      "case_type": "hard_negative_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "infrastructure"
+      ],
+      "case_type": "partial_positive_infra"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "partial_positive_style_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    }
+  ]
+}

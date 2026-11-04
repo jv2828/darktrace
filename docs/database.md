@@ -102,10 +102,11 @@ Association join table mapping investigations to their constituent datasets.
 ### 5. `marketplaces`
 Darknet forums, illicit marketplaces, or paste platforms.
 - `id` (INTEGER IDENTITY PK): Unique platform identifier.
-- `name` (VARCHAR(255) UNIQUE): Canonical platform name (e.g., "AlphaBay-Synth").
+- `name` (VARCHAR(255) UNIQUE): Canonical platform name (e.g., "Velvet Bazaar").
 - `description` (TEXT NULL): Platform characteristics, software stack, or timeline notes.
 - `is_fictional` (BOOLEAN DEFAULT TRUE): Safety classification flag.
 - `created_at` / `updated_at` (TIMESTAMPTZ): Standard audit timestamps.
+- **Unique Indexes:** `uq_marketplaces_lower_name` on `LOWER(name)` ensures platform names are strictly unique case-insensitively.
 
 ### 6. `threat_actors`
 Observed digital identity handles active on monitored platforms.

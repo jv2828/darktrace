@@ -1,7 +1,7 @@
 """Marketplace model representing darknet platforms, forums, or leak sites."""
 
 from typing import TYPE_CHECKING, List, Optional
-from sqlalchemy import Boolean, Identity, String, Text, text
+from sqlalchemy import Boolean, Identity, Index, String, Text, func, text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base, TimestampMixin
@@ -15,6 +15,9 @@ class Marketplace(Base, TimestampMixin):
     """Darknet market or forum platform entity."""
 
     __tablename__ = "marketplaces"
+    __table_args__ = (
+        Index("uq_marketplaces_lower_name", func.lower(text("name")), unique=True),
+    )
 
     id: Mapped[int] = mapped_column(Identity(), primary_key=True)
     name: Mapped[str] = mapped_column(String(255), unique=True, nullable=False, index=True)

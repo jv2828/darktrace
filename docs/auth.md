@@ -25,12 +25,26 @@ DARKTRACE enforces a secure, token-based authentication mechanism using **JSON W
 | `/api/v1/auth/login` | `POST` | ✅ | ✅ | ✅ | Authenticate with identifier & password |
 | `/api/v1/auth/me` | `GET` | ❌ | ✅ | ✅ | Inspect currently authenticated user session |
 | `/api/v1/auth/change-password` | `POST` | ❌ | ✅ | ✅ | Change current user's password |
+| `/api/v1/investigations` | `POST` | ❌ | ✅ | ✅ | Create new investigation in draft status |
+| `/api/v1/investigations` | `GET` | ❌ | ✅ (own) | ✅ (all) | Paginated list of investigations |
+| `/api/v1/investigations/{id}` | `GET` | ❌ | ✅ (own) | ✅ (all) | Detailed case workspace (404 on unowned) |
+| `/api/v1/dashboard/summary` | `GET` | ❌ | ✅ (own) | ✅ (all) | Metric counters, recent cases, and activity |
 | `/api/v1/system/info` | `GET` | ❌ | ❌ | ✅ | Database schema revision & table row counts |
 | `/api/v1/users` | `GET` | ❌ | ❌ | ✅ | Paginated list of users |
 | `/api/v1/users` | `POST` | ❌ | ❌ | ✅ | Create new investigator or administrator |
 | `/api/v1/users/{id}` | `GET` | ❌ | ❌ | ✅ | Get user details by ID |
 | `/api/v1/users/{id}` | `PATCH` | ❌ | ❌ | ✅ | Update role, name, or active status |
 | `/api/v1/users/{id}/reset-password` | `POST` | ❌ | ❌ | ✅ | Reset a user's password and clear lockouts |
+
+---
+
+## 3. Investigation Ownership & Resource Scoping Rules
+
+To protect investigative integrity and prevent cross-case data leakage:
+1. **Investigator Scoping**: Forensic analysts (`investigator` role) can strictly view, search, and access investigations where `created_by == current_user.id`.
+2. **Anti-Enumeration via 404**: Attempting to fetch an investigation owned by another analyst returns **HTTP 404 NOT_FOUND** (not 403 Forbidden). This prevents malicious actors from discovering the existence of sensitive case IDs through status code divergence.
+3. **Administrator Oversight**: Administrators (`admin` role) have global visibility across all investigations, datasets, and audit trails.
+4. **Dashboard Metric Scoping**: Investigators only see aggregate counts (collected posts, extracted indicators, potential linkages) linked directly to their own investigations. Global system totals are restricted to administrators.
 
 ---
 

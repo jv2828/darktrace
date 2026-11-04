@@ -5,7 +5,9 @@ DARKTRACE is a dark web threat-intelligence and actor-correlation platform devel
 ### Implementation Phases:
 - **Phase 1: Project Skeleton**: Containerized PostgreSQL 16 database, FastAPI backend with a unified JSON response envelope, configuration loading, health checks, React (Vite + Tailwind CSS v4) status interface, and test harness.
 - **Phase 2: Database Layer**: Complete 17-table relational schema with SQLAlchemy 2.0 ORM, PostgreSQL native ENUMs, partial indexes, check constraints, cascade semantics, Alembic migrations, and automated schema round-trip testing on an isolated test database.
-- **Phase 3: Authentication & Role Management (Current)**: Argon2id password hashing, JWT bearer tokens (HS256), stateless token validation with immediate deactivation revoking, 5-strike account lockout protection, anti-enumeration security, self-protection guards, role-based access control (Admin vs. Investigator), and administrative user management.
+- **Phase 3: Authentication & Role Management**: Argon2id password hashing, JWT bearer tokens (HS256), stateless token validation with immediate deactivation revoking, 5-strike account lockout protection, anti-enumeration security, self-protection guards, role-based access control (Admin vs. Investigator), and administrative user management.
+- **Phase 4: Frontend Foundation & Investigation Workspaces**: Responsive dark-theme dashboard with Tailwind CSS v4 `@theme` tokens, React Router v7 layout with RBAC-guarded routes, full login experience, investigations CRUD management, real data-driven metric counters, accessible UI component library, and Vitest testing suite.
+- **Phase 5: Synthetic Datasets & Data Ingestion (Current)**: Deterministic synthetic darknet benchmarks (`alpha` and `beta`) with complete ground-truth actor correlation labels, strict RFC 5737 network safety, multi-channel ingestion (sample benchmarks, manual post entry, batch CSV/JSON upload with BOM and multiline quoted cell support), pre-flight validation previews, deduplication hashing, and full UI collection workbench.
 
 ---
 
@@ -162,7 +164,19 @@ Copy-Item .env.example .env
 ```bash
 npm run dev
 ```
-Open your browser to: `http://localhost:5173`
+
+#### Run Frontend Test Suite
+```bash
+npm test
+```
+
+#### Accessing the Platform
+Create the first admin with the `create_admin` script:
+```bash
+cd backend
+python -m app.scripts.create_admin
+```
+Then open your browser and sign in at: [http://localhost:5173](http://localhost:5173)
 
 ---
 
@@ -178,7 +192,8 @@ darktrace/
   │   ├── architecture.md        # Architecture overview & ethical guidelines
   │   ├── api-conventions.md     # Unified response envelope specifications
   │   ├── database.md            # 17-table schema, indexing, and cascade rules
-  │   └── auth.md                # RBAC matrix, JWT tokens, lockout & security
+  │   ├── auth.md                # RBAC matrix, JWT tokens, lockout & security
+  │   └── frontend.md            # Design system, components, routing & testing
   ├── backend/
   │   ├── requirements.txt       # Pinned backend dependencies
   │   ├── pytest.ini             # Pytest configuration
@@ -195,7 +210,7 @@ darktrace/
   │   │   │   ├── base.py        # Declarative Base & TimestampMixin
   │   │   │   └── session.py     # SQLAlchemy 2.0 engine & get_db dependency
   │   │   ├── models/            # 17 SQLAlchemy ORM model entities
-  │   │   ├── schemas/           # Pydantic validation models (Auth, User)
+  │   │   ├── schemas/           # Pydantic validation models (Auth, User, Inv, Dash)
   │   │   ├── api/
   │   │   │   ├── deps.py        # Auth dependencies (get_current_user, require_role)
   │   │   │   └── v1/
@@ -203,23 +218,31 @@ darktrace/
   │   │   │       ├── system.py  # GET /api/v1/system/info (Admin-only diagnostics)
   │   │   │       ├── auth.py    # Login, session me, change password
   │   │   │       ├── users.py   # User creation, listing, updates, reset password
+  │   │   │       ├── investigations.py # Case workspace endpoints & search
+  │   │   │       ├── dashboard.py # Scoped dashboard metrics & recent runs
   │   │   │       └── router.py  # V1 router aggregation
   │   │   ├── scripts/
   │   │   │   └── create_admin.py # CLI administrator provisioning script
-  │   │   ├── services/          # Business logic
+  │   │   ├── services/          # Business logic (investigations, dashboard)
   │   │   └── analysis/          # Threat correlation algorithms
   │   └── tests/
   │       ├── conftest.py        # Isolated test DB fixtures & rollback sessions
   │       ├── test_health.py     # Tests for health status and error envelope
   │       ├── test_schema.py     # 11 tests verifying schema constraints & cascades
-  │       └── test_auth.py       # 26 tests for JWT, Argon2, lockout, and RBAC
+  │       ├── test_auth.py       # 26 tests for JWT, Argon2, lockout, and RBAC
+  │       └── test_investigations.py # 5 tests for case ownership, search & metrics
   └── frontend/                  # React + Vite + Tailwind CSS application
       ├── src/
-      │   ├── App.jsx            # Dark-themed System Status view
-      │   ├── lib/api.js         # Fetch client with envelope parser
-      │   └── index.css          # Tailwind CSS v4 styling
+      │   ├── __tests__/         # Vitest unit & integration test suites
+      │   ├── components/        # AppShell, ProtectedRoute, Modals, UI Primitives
+      │   ├── context/           # AuthContext, ToastContext
+      │   ├── lib/               # api.js API client & envelope parser
+      │   ├── pages/             # Login, Dashboard, Investigations, Users, System
+      │   ├── test/              # Test setup & configuration
+      │   ├── App.jsx            # Routing configuration
+      │   └── index.css          # Tailwind CSS v4 design tokens
       ├── .env.example           # Frontend API base URL template
       ├── package.json           # Node scripts and dependencies
-      └── vite.config.js         # Vite configuration with Tailwind plugin
+      └── vite.config.js         # Vite configuration with Tailwind & Vitest
 ```
 

@@ -1,6 +1,7 @@
 """DARKTRACE API application entry point."""
 
 from fastapi import FastAPI, Request, status
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -50,7 +51,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content=error(
             code="VALIDATION_ERROR",
             message="Request parameter validation failed.",
-            details=exc.errors(),
+            details=jsonable_encoder(exc.errors()),
         ),
     )
 

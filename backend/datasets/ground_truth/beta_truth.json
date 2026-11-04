@@ -1,0 +1,5968 @@
+{
+  "key": "beta",
+  "name": "Beta Ground Truth Labels",
+  "version": 1,
+  "generator_seed": 1337,
+  "operators": [
+    {
+      "operator_id": "op_beta_1",
+      "name": "The Iron Artisan",
+      "description": "Strong positive actor",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "iron_artisan"
+        },
+        {
+          "marketplace": "Tidepool Exchange",
+          "username": "iron_craft"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "iron_weaver"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_10",
+      "name": "Timeless Vendor",
+      "description": "Personas with null timestamps",
+      "personas": [
+        {
+          "marketplace": "Lanternroot",
+          "username": "timeless_echo_a"
+        },
+        {
+          "marketplace": "Tidepool Exchange",
+          "username": "timeless_echo_b"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_11",
+      "name": "Split Vault Operator",
+      "description": "3 personas sharing one BTC wallet",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "split_vault_a"
+        },
+        {
+          "marketplace": "Tidepool Exchange",
+          "username": "split_vault_c"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "split_vault_b"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_12",
+      "name": "Cobalt Shadow Broker",
+      "description": "Legitimate broker on Cobalt Harbor and Greywharf",
+      "personas": [
+        {
+          "marketplace": "Cobalt Harbor",
+          "username": "shadow_broker"
+        },
+        {
+          "marketplace": "Greywharf",
+          "username": "shadow_proxy"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_13",
+      "name": "Pines Shadow Broker",
+      "description": "Unrelated broker on Whispering Pines with identical username",
+      "personas": [
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "shadow_delegate"
+        },
+        {
+          "marketplace": "Whispering Pines",
+          "username": "shadow_broker"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_14",
+      "name": "Northern Merchant Guild",
+      "description": "Strong positive multi-market operator",
+      "personas": [
+        {
+          "marketplace": "Cobalt Harbor",
+          "username": "north_vendor"
+        },
+        {
+          "marketplace": "Lanternroot",
+          "username": "root_vendor"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "velvet_guildmaster"
+        },
+        {
+          "marketplace": "Whispering Pines",
+          "username": "pine_vendor"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_2",
+      "name": "Night Owl Merchant",
+      "description": "Style + hours positive",
+      "personas": [
+        {
+          "marketplace": "Lanternroot",
+          "username": "dusk_merchant"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "nightshade_trader"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_3",
+      "name": "Infrastructure Operator",
+      "description": "Infra only positive",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "harbor_master"
+        },
+        {
+          "marketplace": "Lanternroot",
+          "username": "beacon_light"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_4",
+      "name": "Tidepool Drift Courier",
+      "description": "Hard negative afternoon with 2 personas",
+      "personas": [
+        {
+          "marketplace": "Cobalt Harbor",
+          "username": "drift_courier_sea"
+        },
+        {
+          "marketplace": "Tidepool Exchange",
+          "username": "drift_courier"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_5",
+      "name": "Greywharf Current Runner",
+      "description": "Hard negative afternoon with 2 personas",
+      "personas": [
+        {
+          "marketplace": "Greywharf",
+          "username": "current_runner"
+        },
+        {
+          "marketplace": "Whispering Pines",
+          "username": "current_courier"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_6",
+      "name": "The Silver Quill",
+      "description": "Control vendor with 2 personas",
+      "personas": [
+        {
+          "marketplace": "Lanternroot",
+          "username": "silver_scribe"
+        },
+        {
+          "marketplace": "Velvet Bazaar",
+          "username": "silver_quill"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_7",
+      "name": "Key Sharer A",
+      "description": "Contradictory crypto actor A (lowercase, night hours)",
+      "personas": [
+        {
+          "marketplace": "Cobalt Harbor",
+          "username": "cipher_echo_a"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_8",
+      "name": "Key Sharer B",
+      "description": "Contradictory crypto actor B (Title Case, afternoon hours)",
+      "personas": [
+        {
+          "marketplace": "Whispering Pines",
+          "username": "cipher_echo_b"
+        }
+      ]
+    },
+    {
+      "operator_id": "op_beta_9",
+      "name": "Terse Trader",
+      "description": "Short-text persona with 5-10 short posts",
+      "personas": [
+        {
+          "marketplace": "Cobalt Harbor",
+          "username": "terse_bob"
+        },
+        {
+          "marketplace": "Whispering Pines",
+          "username": "terse_bobby"
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [
+        "cryptographic"
+      ],
+      "case_type": "contradictory_crypto"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "cipher_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [
+        "behavioural"
+      ],
+      "case_type": "hard_negative_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [
+        "behavioural"
+      ],
+      "case_type": "hard_negative_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "drift_courier_sea"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "north_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Cobalt Harbor",
+        "username": "terse_bob"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "short_text"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [
+        "behavioural"
+      ],
+      "case_type": "hard_negative_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "current_runner"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "infrastructure"
+      ],
+      "case_type": "partial_positive_infra"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "harbor_master"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "iron_artisan"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "shadow_proxy"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Greywharf",
+        "username": "split_vault_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "beacon_light"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "partial_positive_style_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "dusk_merchant"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "root_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "silver_scribe"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "stylometric"
+      ],
+      "case_type": "missing_timestamps"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Lanternroot",
+        "username": "timeless_echo_a"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "common_indicator_decoy"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [
+        "behavioural"
+      ],
+      "case_type": "hard_negative_behaviour"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "drift_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "iron_craft"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "split_vault_c"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Tidepool Exchange",
+        "username": "timeless_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "iron_weaver"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "nightshade_trader"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "shadow_delegate"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "silver_quill"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "b": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "split_vault_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "same_operator",
+      "shared_dimensions": [
+        "cryptographic",
+        "stylometric",
+        "behavioural"
+      ],
+      "case_type": "strong_positive"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Velvet Bazaar",
+        "username": "velvet_guildmaster"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "cipher_echo_b"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "current_courier"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "pine_vendor"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    },
+    {
+      "a": {
+        "marketplace": "Whispering Pines",
+        "username": "shadow_broker"
+      },
+      "b": {
+        "marketplace": "Whispering Pines",
+        "username": "terse_bobby"
+      },
+      "label": "different_operator",
+      "shared_dimensions": [],
+      "case_type": "control"
+    }
+  ]
+}
