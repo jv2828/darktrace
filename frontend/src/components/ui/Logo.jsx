@@ -99,3 +99,4 @@ export default function Logo({ size = 'md', className = '', glow = true }) {
     </svg>
   );
 }
+
