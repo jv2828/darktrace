@@ -113,10 +113,7 @@ export default function AppShell() {
       {/* Main Content Pane */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Desktop Topbar */}
-        <header className="hidden md:flex items-center justify-between px-8 py-4 bg-slate-900/60 border-b border-slate-800">
-          <div className="text-xs text-slate-400 font-mono">
-            College Cybersecurity Lab Project &bull; Strictly Synthetic Data
-          </div>
+        <header className="hidden md:flex items-center justify-end px-8 py-4 bg-slate-900/60 border-b border-slate-800">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-xs">
               <span className="text-slate-300 font-medium">{user?.full_name || user?.username}</span>

@@ -1,10 +1,108 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { NOTICE_KEY } from '../lib/api';
 import Card from '../components/ui/Card';
 import Input from '../components/ui/Input';
 import Button from '../components/ui/Button';
+
+function MatrixBackground() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    // Respect reduced motion preference
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Guard against environments where getContext is null (e.g. jsdom in Vitest)
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId;
+    let lastTime = 0;
+    const fps = 20; // 20fps frame rate cap
+    const interval = 1000 / fps;
+
+    // Monospace hex digits 0-9 A-F, binary 0/1, and half-width katakana
+    const characters = '0123456789ABCDEF0101ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ'.split('');
+    const fontSize = 14;
+    let columns = 0;
+    let drops = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      columns = Math.max(1, Math.floor(canvas.width / fontSize));
+      drops = Array.from({ length: columns }, () => Math.floor(Math.random() * -50));
+    };
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    const render = (currentTime) => {
+      animationFrameId = requestAnimationFrame(render);
+
+      // Pause rendering while tab is in the background
+      if (document.hidden) return;
+
+      const delta = currentTime - lastTime;
+      if (delta < interval) return;
+      lastTime = currentTime - (delta % interval);
+
+      // Soft fading trail
+      ctx.fillStyle = 'rgba(2, 6, 23, 0.25)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#38bdf8'; // dim sky-blue
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters[Math.floor(Math.random() * characters.length)];
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+
+        if (y > 0) {
+          ctx.fillText(text, x, y);
+        }
+
+        if (y > canvas.height && Math.random() > 0.985) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(render);
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        lastTime = performance.now();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ opacity: 0.15 }}
+      aria-hidden="true"
+    />
+  );
+}
 
 export default function LoginPage() {
   const { login, isAuthenticated } = useAuth();
@@ -62,20 +160,31 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-4 selection:bg-slate-800">
-      <div className="max-w-md w-full space-y-6">
+    <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-4 selection:bg-slate-800 relative overflow-hidden">
+      {/* Subtle Terminal Matrix Canvas */}
+      <MatrixBackground />
+
+      {/* Faint Scanlines Overlay */}
+      <div className="cyber-scanlines fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
+
+      <div className="max-w-md w-full space-y-6 relative z-10">
         {/* Brand Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-extrabold tracking-widest text-slate-100 uppercase">
+          <h1
+            className="glitch-title text-3xl font-extrabold tracking-widest text-slate-100 uppercase"
+            data-text="DARKTRACE"
+          >
             DARKTRACE
           </h1>
           <p className="text-sm text-slate-400">
-            Dark web threat-intelligence and actor correlation.
+            <span className="typewriter-text inline-block">
+              Dark web threat-intelligence and actor correlation.
+            </span>
           </p>
         </div>
 
         {/* Login Card */}
-        <Card className="p-8 border-slate-800 bg-slate-900 shadow-xl">
+        <Card className="login-card-animated p-8 border-slate-800 bg-slate-900 shadow-xl relative z-10">
           <form onSubmit={handleSubmit} className="space-y-5" noValidate>
             {/* Session Expiry Notice */}
             {sessionNotice && (

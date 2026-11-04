@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Card from '../../ui/Card';
 import Badge from '../../ui/Badge';
 import Button from '../../ui/Button';
@@ -13,7 +13,8 @@ import {
   fetchInvestigationActors,
 } from '../../../lib/api';
 
-export default function OverviewTab({ investigationId, runId, onTriggerRun }) {
+export default function OverviewTab({ investigationId, runId, onTriggerRun, setTab }) {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [correlations, setCorrelations] = useState([]);
   const [actors, setActors] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,6 +24,18 @@ export default function OverviewTab({ investigationId, runId, onTriggerRun }) {
   const [loadingDetail, setLoadingDetail] = useState(false);
   const [showSourceData, setShowSourceData] = useState(false);
   const [sourceDataSubTab, setSourceDataSubTab] = useState('posts'); // 'posts' | 'indicators'
+
+  const switchTab = (tabId) => {
+    if (setTab) {
+      setTab(tabId);
+    } else {
+      setSearchParams((prev) => {
+        const p = new URLSearchParams(prev);
+        p.set('tab', tabId);
+        return p;
+      });
+    }
+  };
 
   const loadData = useCallback(async () => {
     try {
@@ -34,8 +47,27 @@ export default function OverviewTab({ investigationId, runId, onTriggerRun }) {
       ]);
 
       const corrItems = corrRes?.data?.items || corrRes?.items || (Array.isArray(corrRes) ? corrRes : []);
+      // Sort persona pairs by combined score descending
+      corrItems.sort((a, b) => (b.combined_score || 0) - (a.combined_score || 0));
       setCorrelations(corrItems);
       setActors(Array.isArray(actorsRes) ? actorsRes : []);
+
+      // Auto-expand the first (top) pair by default on first load
+      if (corrItems.length > 0) {
+        const topPair = corrItems[0];
+        const topPairKey = `${topPair.actors.actor_a.id}_${topPair.actors.actor_b.id}`;
+        setExpandedPairId(topPairKey);
+        fetchCorrelationDetail(
+          investigationId,
+          topPair.actors.actor_a.id,
+          topPair.actors.actor_b.id,
+          runId
+        ).then((detail) => {
+          setPairDetails((prev) => ({ ...prev, [topPairKey]: detail }));
+        }).catch((err) => {
+          console.error('Failed to pre-fetch top pair detail:', err);
+        });
+      }
     } catch (err) {
       setError(err.message || 'Failed to load correlation overview data.');
     } finally {
@@ -106,8 +138,75 @@ export default function OverviewTab({ investigationId, runId, onTriggerRun }) {
     );
   }
 
+  // If no run exists, show only the existing "Run Correlation Pipeline" empty state
+  if (!runId && correlations.length === 0) {
+    return (
+      <Card className="p-8">
+        <EmptyState
+          title="No Correlated Persona Pairs"
+          message="No persona links have been established yet. Execute the correlation pipeline to calculate multi-dimensional similarity."
+          action={
+            onTriggerRun ? (
+              <Button variant="primary" size="sm" onClick={onTriggerRun}>
+                Run Correlation Pipeline
+              </Button>
+            ) : null
+          }
+        />
+      </Card>
+    );
+  }
+
   return (
     <div className="space-y-6">
+      {/* Prominent Explore the Evidence Card */}
+      <Card className="p-4 bg-slate-900/90 border-slate-700/80 shadow-md">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <h3 className="text-sm font-semibold text-slate-100 flex items-center gap-2">
+              <span className="text-sky-400">⚡</span> Explore the evidence
+            </h3>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Jump directly into topological graph, behavioral charts, stylometry, or chronological timeline.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => switchTab('graph')}
+              className="text-xs font-medium"
+            >
+              Evidence Graph
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => switchTab('behaviour')}
+              className="text-xs font-medium"
+            >
+              Behaviour Charts
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => switchTab('stylometry')}
+              className="text-xs font-medium"
+            >
+              Stylometry Charts
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => switchTab('chronology')}
+              className="text-xs font-medium"
+            >
+              Timeline
+            </Button>
+          </div>
+        </div>
+      </Card>
+
       {/* Persistent Non-Probability Notice */}
       <div className="p-3.5 rounded-lg border border-slate-800 bg-slate-900/60 text-xs text-slate-300 flex items-start gap-3">
         <span className="text-amber-400 text-sm leading-none mt-0.5 font-bold" aria-hidden="true">

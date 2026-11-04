@@ -104,6 +104,7 @@ export default function InvestigationWorkspacePage() {
             clearInterval(pollIntervalRef.current);
             pollIntervalRef.current = null;
             toast.success(`Correlation run #${updated.id} completed successfully.`);
+            setTab('overview');
             const refreshedRuns = await fetchPipelineRuns(id);
             setRuns(refreshedRuns || []);
           } else if (updated.status === 'failed') {
@@ -314,6 +315,7 @@ export default function InvestigationWorkspacePage() {
             investigationId={id}
             runId={activeRun?.id}
             onTriggerRun={handleRunCorrelation}
+            setTab={setTab}
           />
         )}
 
@@ -321,6 +323,7 @@ export default function InvestigationWorkspacePage() {
           <EvidenceGraphTab
             investigationId={id}
             runId={activeRun?.id}
+            onTriggerRun={handleRunCorrelation}
           />
         )}
 

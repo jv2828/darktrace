@@ -24,7 +24,7 @@ const NODE_SHAPES = {
   infrastructure: 'pentagon',
 };
 
-export default function EvidenceGraphTab({ investigationId, runId }) {
+export default function EvidenceGraphTab({ investigationId, runId, onTriggerRun }) {
   const containerRef = useRef(null);
   const cyRef = useRef(null);
 
@@ -33,7 +33,7 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
   const [error, setError] = useState(null);
 
   // Filter controls
-  const [minScore, setMinScore] = useState(0.25);
+  const [minScore, setMinScore] = useState(0.2);
   const [selectedLayout, setSelectedLayout] = useState('cose');
   const [enabledTypes, setEnabledTypes] = useState({
     persona: true,
@@ -103,7 +103,7 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
             style: {
               'background-color': (ele) => NODE_COLORS[ele.data('type')] || '#64748b',
               shape: (ele) => NODE_SHAPES[ele.data('type')] || 'ellipse',
-              label: 'data(label)',
+              label: (ele) => (ele.data('type') === 'persona' ? (ele.data('username') || ele.data('label') || '') : (ele.data('label') || '')),
               color: '#f1f5f9',
               'font-size': '11px',
               'font-family': 'monospace',
@@ -139,6 +139,12 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
               'line-style': (ele) => (ele.data('type') === 'correlated' ? 'solid' : 'dashed'),
               'curve-style': 'bezier',
               opacity: 0.8,
+              label: (ele) => (ele.data('type') === 'correlated' ? (ele.data('level') || '') : ''),
+              'font-size': '10px',
+              'font-family': 'monospace',
+              'text-rotation': 'autorotate',
+              'text-margin-y': -8,
+              color: '#94a3b8',
             },
           },
           {
@@ -222,6 +228,24 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
     );
   }
 
+  if (!runId) {
+    return (
+      <Card className="p-8">
+        <EmptyState
+          title="No Correlation Graph Available"
+          message="Execute the correlation pipeline to generate an interactive topological graph of personas and shared indicators."
+          action={
+            onTriggerRun ? (
+              <Button variant="primary" size="sm" onClick={onTriggerRun}>
+                Run Correlation
+              </Button>
+            ) : null
+          }
+        />
+      </Card>
+    );
+  }
+
   const nodes = graphData?.nodes || [];
   const edges = graphData?.edges || [];
 
@@ -231,6 +255,13 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
         <EmptyState
           title="No Graph Nodes Available"
           message="No threat personas or shared infrastructure were found. Ensure that data has been ingested and the correlation pipeline has completed."
+          action={
+            onTriggerRun ? (
+              <Button variant="primary" size="sm" onClick={onTriggerRun}>
+                Run Correlation
+              </Button>
+            ) : null
+          }
         />
       </Card>
     );
@@ -261,7 +292,7 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
             <input
               id="min-score-input"
               type="range"
-              min="0.25"
+              min="0.1"
               max="1.0"
               step="0.05"
               value={minScore}
@@ -396,38 +427,44 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
           </Card>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-          {/* Cytoscape Canvas */}
-          <div className="lg:col-span-3 rounded-lg border border-slate-800 bg-slate-950/80 relative min-h-[520px] overflow-hidden">
-            <div
-              ref={containerRef}
-              data-testid="cytoscape-container"
-              className="w-full h-full min-h-[520px]"
-            />
-            {/* Watermark/legend */}
-            <div className="absolute bottom-3 left-3 px-2.5 py-1.5 rounded bg-slate-900/90 border border-slate-800 text-[10px] text-slate-400 space-y-1 backdrop-blur-xs select-none">
-              <div className="font-semibold text-slate-300 uppercase tracking-wider">Topology Legend</div>
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-sky-500" /> Persona
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-xs bg-slate-400" /> Marketplace
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-amber-500" /> PGP Key
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" /> Wallet
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-purple-500" /> Infra
-                </span>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between px-1">
+            <p className="text-xs text-slate-400 font-mono">
+              Drag nodes to explore. Click a node or edge for evidence.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            {/* Cytoscape Canvas */}
+            <div className="lg:col-span-3 rounded-lg border border-slate-800 bg-slate-950/80 relative min-h-[520px] overflow-hidden">
+              <div
+                ref={containerRef}
+                data-testid="cytoscape-container"
+                className="w-full h-full min-h-[520px]"
+              />
+              {/* Watermark/legend */}
+              <div className="absolute bottom-3 left-3 px-2.5 py-1.5 rounded bg-slate-900/90 border border-slate-800 text-[10px] text-slate-400 space-y-1 backdrop-blur-xs select-none">
+                <div className="font-semibold text-slate-300 uppercase tracking-wider">Topology Legend</div>
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-sky-500" /> Persona
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-xs bg-slate-400" /> Marketplace
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-amber-500" /> PGP Key
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" /> Wallet
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-purple-500" /> Infra
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Inspection Inspector / Side Panel */}
+            {/* Inspection Inspector / Side Panel */}
           <Card className="p-4 border-slate-800 flex flex-col justify-between">
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200 border-b border-slate-800 pb-2 mb-3">
@@ -544,8 +581,9 @@ export default function EvidenceGraphTab({ investigationId, runId }) {
             </div>
           </Card>
         </div>
-      )}
-    </div>
-  );
+      </div>
+    )}
+  </div>
+);
 }
 
