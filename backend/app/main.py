@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api.v1.router import api_v1_router
+from app.core.bootstrap import bootstrap_admin_user
 from app.core.config import settings
 from app.core.exceptions import APIException
 from app.core.responses import error
@@ -20,6 +21,8 @@ async def lifespan(app: FastAPI):
     """Application lifespan context manager for startup and shutdown routines."""
     # Startup: recover any pipeline runs interrupted by server restart
     recover_interrupted_pipeline_runs()
+    # Startup: optionally bootstrap initial admin user if configured
+    bootstrap_admin_user()
     yield
 
 

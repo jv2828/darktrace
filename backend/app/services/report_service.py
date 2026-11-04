@@ -18,6 +18,7 @@ from reportlab.platypus import HRFlowable, KeepTogether, PageBreak, Paragraph, S
 from sqlalchemy import distinct, func, select
 from sqlalchemy.orm import Session, joinedload
 
+from app.core.config import settings
 from app.core.exceptions import APIException
 from app.models.correlation_result import CorrelationResult
 from app.models.evidence_record import EvidenceRecord
@@ -36,7 +37,14 @@ from app.services.correlation_service import (
     get_latest_completed_run_id,
 )
 
-REPORTS_BASE_DIR = Path(__file__).resolve().parents[2] / "reports"
+def get_reports_base_dir() -> Path:
+    """Resolve and create base reports storage directory from configuration."""
+    base_dir = settings.reports_dir_path
+    base_dir.mkdir(parents=True, exist_ok=True)
+    return base_dir
+
+
+REPORTS_BASE_DIR = settings.reports_dir_path
 
 LIMITATIONS_STATEMENTS = [
     "Scores are heuristic evidence strengths, not probabilities of physical identity.",
@@ -726,7 +734,7 @@ def create_investigation_report(
     dossier = _gather_dossier_data(db, investigation_id, target_run_id)
 
     # Ensure output directory exists
-    inv_dir = REPORTS_BASE_DIR / str(investigation_id)
+    inv_dir = get_reports_base_dir() / str(investigation_id)
     inv_dir.mkdir(parents=True, exist_ok=True)
 
     uid = uuid.uuid4().hex[:8]
