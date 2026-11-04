@@ -5,6 +5,7 @@ import { NOTICE_KEY } from '../lib/api';
 import Card from '../components/ui/Card';
 import Input from '../components/ui/Input';
 import Button from '../components/ui/Button';
+import Logo from '../components/ui/Logo';
 
 function MatrixBackground() {
   const canvasRef = useRef(null);
@@ -169,18 +170,23 @@ export default function LoginPage() {
 
       <div className="max-w-md w-full space-y-6 relative z-10">
         {/* Brand Header */}
-        <div className="text-center space-y-2">
-          <h1
-            className="glitch-title text-3xl font-extrabold tracking-widest text-slate-100 uppercase"
-            data-text="DARKTRACE"
-          >
-            DARKTRACE
-          </h1>
-          <p className="text-sm text-slate-400">
-            <span className="typewriter-text inline-block">
-              Dark web threat-intelligence and actor correlation.
-            </span>
-          </p>
+        <div className="text-center space-y-3">
+          <div className="flex justify-center">
+            <Logo size="xl" />
+          </div>
+          <div className="space-y-1">
+            <h1
+              className="glitch-title text-3xl font-extrabold tracking-widest text-slate-100 uppercase"
+              data-text="DARKTRACE"
+            >
+              DARKTRACE
+            </h1>
+            <p className="text-sm text-slate-400">
+              <span className="typewriter-text inline-block">
+                Dark web threat-intelligence and actor correlation.
+              </span>
+            </p>
+          </div>
         </div>
 
         {/* Login Card */}

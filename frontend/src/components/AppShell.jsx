@@ -3,6 +3,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Badge from './ui/Badge';
 import Button from './ui/Button';
+import Logo from './ui/Logo';
 
 export default function AppShell() {
   const { user, isAdmin, logout } = useAuth();
@@ -30,7 +31,8 @@ export default function AppShell() {
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col md:flex-row font-sans">
       {/* Mobile Top Header */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
+          <Logo size="sm" />
           <span className="font-bold tracking-wider text-slate-100 text-sm">DARKTRACE</span>
           <Badge variant={user?.role || 'neutral'}>{user?.role || 'user'}</Badge>
         </div>
@@ -58,7 +60,8 @@ export default function AppShell() {
       >
         <div>
           {/* Logo Brand Header */}
-          <div className="hidden md:flex items-center justify-between p-6 border-b border-slate-800">
+          <div className="hidden md:flex items-center gap-3 p-6 border-b border-slate-800">
+            <Logo size="md" />
             <div>
               <div className="text-base font-bold tracking-wider text-slate-100">DARKTRACE</div>
               <div className="text-[11px] text-slate-400 font-mono mt-0.5">Threat Intelligence</div>
