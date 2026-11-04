@@ -8,6 +8,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api.v1.router import api_v1_router
 from app.core.config import settings
+from app.core.exceptions import APIException
 from app.core.responses import error
 
 # Create FastAPI application
@@ -28,6 +29,19 @@ app.add_middleware(
 
 
 # Global Exception Handlers ensuring all responses match the standard envelope
+@app.exception_handler(APIException)
+async def api_exception_handler(request: Request, exc: APIException):
+    """Handle explicit DARKTRACE API exceptions with tailored error code and envelope."""
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=error(
+            code=exc.code,
+            message=exc.message,
+            details=exc.details,
+        ),
+    )
+
+
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     """Handle request validation errors in standard error envelope."""
@@ -57,12 +71,13 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
 @app.exception_handler(Exception)
 async def general_exception_handler(request: Request, exc: Exception):
     """Handle unexpected server errors in standard error envelope."""
+    details = str(exc) if settings.APP_ENV == "development" else None
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content=error(
             code="INTERNAL_SERVER_ERROR",
             message="An unexpected server error occurred.",
-            details=str(exc),
+            details=details,
         ),
     )
 

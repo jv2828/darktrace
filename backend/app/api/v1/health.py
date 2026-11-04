@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
 from app.core.responses import error, success
 from app.db.session import get_db
 
@@ -30,12 +31,13 @@ def check_health(db: Session = Depends(get_db)):
         }
         return success(data=data)
     except Exception as exc:
+        details = str(exc) if settings.APP_ENV == "development" else None
         return JSONResponse(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             content=error(
                 code="DATABASE_UNAVAILABLE",
                 message="PostgreSQL database is currently unreachable.",
-                details=str(exc),
+                details=details,
             ),
         )
 

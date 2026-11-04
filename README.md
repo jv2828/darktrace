@@ -1,19 +1,18 @@
-# DARKTRACE (Phase 1: Project Skeleton)
+# DARKTRACE
 
 DARKTRACE is a dark web threat-intelligence and actor-correlation platform developed for an academic cybersecurity project. 
 
-Phase 1 provides the verified architectural foundation:
-- Containerized PostgreSQL 16 database configuration.
-- FastAPI backend with a unified JSON response envelope, configuration loading, and database health check.
-- Modern React frontend (Vite + Tailwind CSS v4) with real-time system status verification.
-- Pytest test suite validating API health and failure states.
+### Implementation Phases:
+- **Phase 1: Project Skeleton**: Containerized PostgreSQL 16 database, FastAPI backend with a unified JSON response envelope, configuration loading, health checks, React (Vite + Tailwind CSS v4) status interface, and test harness.
+- **Phase 2: Database Layer**: Complete 17-table relational schema with SQLAlchemy 2.0 ORM, PostgreSQL native ENUMs, partial indexes, check constraints, cascade semantics, Alembic migrations, and automated schema round-trip testing on an isolated test database.
+- **Phase 3: Authentication & Role Management (Current)**: Argon2id password hashing, JWT bearer tokens (HS256), stateless token validation with immediate deactivation revoking, 5-strike account lockout protection, anti-enumeration security, self-protection guards, role-based access control (Admin vs. Investigator), and administrative user management.
 
 ---
 
 ## Prerequisites
 
 Ensure the following tools are installed on your workstation:
-- **Python 3.11+**
+- **Python 3.11+** (Python 3.12 recommended)
 - **Node.js 20+** (includes `npm`)
 - **Docker Desktop** (with Docker Compose support)
 
@@ -41,6 +40,8 @@ The default credentials inside `.env` configure:
 - `DB_PASSWORD=change_me`
 - `DB_HOST=localhost`
 - `DB_PORT=5432`
+- `TEST_DB_NAME=darktrace_test`
+- `SECRET_KEY=change_me_later`
 - `CORS_ORIGINS=http://localhost:5173`
 
 ---
@@ -92,10 +93,35 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+#### Apply Database Migrations (Alembic)
+With PostgreSQL running, apply the database schema:
+```bash
+alembic upgrade head
+```
+
+Additional useful Alembic migration commands:
+```bash
+# Roll back one migration
+alembic downgrade -1
+
+# Roll back all migrations to base schema
+alembic downgrade base
+
+# Autogenerate a new migration from ORM model changes
+alembic revision --autogenerate -m "migration_description"
+```
+
+#### Bootstrap First Administrator Account
+To create your first administrative user interactively:
+```bash
+python -m app.scripts.create_admin
+```
+
 #### Run Pytest Test Suite
 ```bash
 pytest -v
 ```
+*(All 40+ tests execute against an isolated test database `darktrace_test` defined by `TEST_DB_NAME` and will never touch the primary `darktrace` database).*
 
 #### Start FastAPI Backend Server
 ```bash
@@ -104,6 +130,8 @@ uvicorn app.main:app --reload --port 8000
 - API Base URL: `http://localhost:8000/api/v1`
 - Interactive OpenAPI Docs: `http://localhost:8000/docs`
 - Health Endpoint: `http://localhost:8000/api/v1/health`
+- Auth Endpoints: `http://localhost:8000/api/v1/auth/login`, `http://localhost:8000/api/v1/auth/me`
+- User Admin Endpoints: `http://localhost:8000/api/v1/users`
 
 ---
 
@@ -148,25 +176,43 @@ darktrace/
   ├── docker-compose.yml         # PostgreSQL 16 service definition
   ├── docs/
   │   ├── architecture.md        # Architecture overview & ethical guidelines
-  │   └── api-conventions.md     # Unified response envelope specifications
+  │   ├── api-conventions.md     # Unified response envelope specifications
+  │   ├── database.md            # 17-table schema, indexing, and cascade rules
+  │   └── auth.md                # RBAC matrix, JWT tokens, lockout & security
   ├── backend/
   │   ├── requirements.txt       # Pinned backend dependencies
   │   ├── pytest.ini             # Pytest configuration
+  │   ├── alembic.ini            # Alembic configuration
+  │   ├── alembic/               # Database migration scripts
   │   ├── app/
   │   │   ├── main.py            # FastAPI initialization & global exception handlers
   │   │   ├── core/
   │   │   │   ├── config.py      # Settings class loading .env via Pydantic
-  │   │   │   └── responses.py   # Envelope helpers: success() and error()
+  │   │   │   ├── exceptions.py  # Structured APIException class
+  │   │   │   ├── responses.py   # Envelope helpers: success() and error()
+  │   │   │   └── security.py    # Argon2id hashing, JWT encode/decode, policies
   │   │   ├── db/
+  │   │   │   ├── base.py        # Declarative Base & TimestampMixin
   │   │   │   └── session.py     # SQLAlchemy 2.0 engine & get_db dependency
+  │   │   ├── models/            # 17 SQLAlchemy ORM model entities
+  │   │   ├── schemas/           # Pydantic validation models (Auth, User)
   │   │   ├── api/
+  │   │   │   ├── deps.py        # Auth dependencies (get_current_user, require_role)
   │   │   │   └── v1/
   │   │   │       ├── health.py  # GET /api/v1/health executing SELECT 1
+  │   │   │       ├── system.py  # GET /api/v1/system/info (Admin-only diagnostics)
+  │   │   │       ├── auth.py    # Login, session me, change password
+  │   │   │       ├── users.py   # User creation, listing, updates, reset password
   │   │   │       └── router.py  # V1 router aggregation
-  │   │   ├── services/          # Business logic (Phase 2+)
-  │   │   └── analysis/          # Threat correlation algorithms (Phase 2+)
+  │   │   ├── scripts/
+  │   │   │   └── create_admin.py # CLI administrator provisioning script
+  │   │   ├── services/          # Business logic
+  │   │   └── analysis/          # Threat correlation algorithms
   │   └── tests/
-  │       └── test_health.py     # Tests for health status and error envelope
+  │       ├── conftest.py        # Isolated test DB fixtures & rollback sessions
+  │       ├── test_health.py     # Tests for health status and error envelope
+  │       ├── test_schema.py     # 11 tests verifying schema constraints & cascades
+  │       └── test_auth.py       # 26 tests for JWT, Argon2, lockout, and RBAC
   └── frontend/                  # React + Vite + Tailwind CSS application
       ├── src/
       │   ├── App.jsx            # Dark-themed System Status view
