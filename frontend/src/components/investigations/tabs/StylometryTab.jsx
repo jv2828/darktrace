@@ -154,13 +154,22 @@ export default function StylometryTab({ investigationId, runId }) {
 
   featureChartData.forEach((row) => {
     selectedActors.forEach((a) => {
-      const feats = a.stylometry || {};
+      const feats = a.stylometry?.features || a.stylometry || {};
       let val = 0;
-      if (row.feature === 'Avg Sentence Len') val = feats.avg_sentence_len || 0;
-      else if (row.feature === 'Avg Word Len') val = (feats.avg_word_len || 0) * 4; // scale for visibility
-      else if (row.feature === 'Punctuation Rate') val = (feats.punctuation_rate || 0) * 100;
-      else if (row.feature === 'Digit Rate') val = (feats.digit_rate || 0) * 100;
-      else if (row.feature === 'Uppercase Rate') val = (feats.uppercase_rate || 0) * 100;
+      if (row.feature === 'Avg Sentence Len') {
+        val = feats.mean_sentence_length ?? feats.avg_sentence_len ?? 0;
+      } else if (row.feature === 'Avg Word Len') {
+        val = (feats.mean_word_length ?? feats.avg_word_len ?? 0) * 4; // scale for visibility
+      } else if (row.feature === 'Punctuation Rate') {
+        const punctSum = Object.entries(feats)
+          .filter(([k]) => k.startsWith('punct_'))
+          .reduce((acc, [, v]) => acc + (typeof v === 'number' ? v : 0), 0);
+        val = punctSum || (feats.punctuation_rate ? feats.punctuation_rate * 100 : 0);
+      } else if (row.feature === 'Digit Rate') {
+        val = (feats.digit_ratio ?? feats.digit_rate ?? 0) * 100;
+      } else if (row.feature === 'Uppercase Rate') {
+        val = (feats.uppercase_letter_ratio ?? feats.uppercase_rate ?? 0) * 100;
+      }
       row[a.username] = parseFloat(val.toFixed(2));
     });
   });
@@ -284,16 +293,29 @@ export default function StylometryTab({ investigationId, runId }) {
                   <span className="text-[10px] uppercase font-semibold text-slate-400">
                     Top Characteristic Terms
                   </span>
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-1.5">
                     {terms.length > 0 ? (
-                      terms.slice(0, 10).map((t, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300 border border-slate-700"
-                        >
-                          {t}
-                        </span>
-                      ))
+                      terms.slice(0, 10).map((t, tIdx) => {
+                        const termText = typeof t === 'object' && t !== null ? t.term : String(t);
+                        const tfidfScore =
+                          typeof t === 'object' && t !== null && typeof t.tfidf === 'number'
+                            ? t.tfidf.toFixed(2)
+                            : null;
+
+                        return (
+                          <span
+                            key={tIdx}
+                            className="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1"
+                          >
+                            <span>{termText}</span>
+                            {tfidfScore && (
+                              <span className="text-[9px] text-sky-400 font-sans">
+                                {tfidfScore}
+                              </span>
+                            )}
+                          </span>
+                        );
+                      })
                     ) : (
                       <span className="text-xs text-slate-500">No distinctive terms indexed.</span>
                     )}

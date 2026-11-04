@@ -75,17 +75,53 @@ const MOCK_CORRELATIONS = {
 const MOCK_ACTORS = [
   {
     id: 21,
+    actor_id: 21,
     username: 'shadow_vendor',
     marketplace: 'SilkRoad4',
     post_count: 24,
     best_correlated_partner_score: 0.885,
+    stylometry: {
+      features: {
+        mean_sentence_length: 14.2,
+        mean_word_length: 4.8,
+        digit_ratio: 0.02,
+        uppercase_letter_ratio: 0.05,
+        'punct_,': 1.2,
+      },
+    },
+    tfidf_summary: [
+      { term: 'dispatch', tfidf: 0.42 },
+      { term: 'stealth pack', tfidf: 0.38 },
+    ],
+    behaviour: {
+      hourly_distribution: Array(24).fill(0.04),
+      daily_distribution: Array(7).fill(0.14),
+    },
   },
   {
     id: 22,
+    actor_id: 22,
     username: 'ghost_courier',
     marketplace: 'DarkBazaar',
     post_count: 18,
     best_correlated_partner_score: 0.885,
+    stylometry: {
+      features: {
+        mean_sentence_length: 12.5,
+        mean_word_length: 5.1,
+        digit_ratio: 0.01,
+        uppercase_letter_ratio: 0.03,
+        'punct_.': 2.4,
+      },
+    },
+    tfidf_summary: [
+      { term: 'courier drop', tfidf: 0.35 },
+      { term: 'clean escrow', tfidf: 0.29 },
+    ],
+    behaviour: {
+      hourly_distribution: Array(24).fill(0.04),
+      daily_distribution: Array(7).fill(0.14),
+    },
   },
 ];
 
@@ -159,7 +195,7 @@ function setupMockFetch() {
       });
     }
 
-    if (urlStr.includes('/api/v1/investigations/1/actors')) {
+    if (urlStr.includes('/api/v1/investigations/1/analysis/actors') || urlStr.includes('/api/v1/investigations/1/actors')) {
       return Promise.resolve({
         status: 200,
         json: () => Promise.resolve({ success: true, data: MOCK_ACTORS }),
@@ -333,5 +369,27 @@ describe('Investigation Workspace & Forensic Tabs (Phase 9)', () => {
     expect(screen.getByText('ghost_courier')).toBeInTheDocument();
     expect(screen.getByText(/Heuristic Correlation Notice/i)).toBeInTheDocument();
     expect(screen.getByText(/definitive identity confirmation/i)).toBeInTheDocument();
+  });
+
+  it('renders stylometry tab with linguistic feature comparison and TF-IDF terms without crashing', async () => {
+    render(
+      <MemoryRouter initialEntries={['/investigations/1?tab=stylometry']}>
+        <ToastProvider>
+          <Routes>
+            <Route path="/investigations/:id" element={<InvestigationWorkspacePage />} />
+          </Routes>
+        </ToastProvider>
+      </MemoryRouter>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText(/Linguistic Feature Comparison/i)).toBeInTheDocument();
+    });
+
+    // Check that distinctive vocabulary section is rendered with TF-IDF terms
+    expect(screen.getByText(/Distinctive Vocabulary & TF-IDF Terms/i)).toBeInTheDocument();
+    expect(screen.getByText('dispatch')).toBeInTheDocument();
+    expect(screen.getByText('stealth pack')).toBeInTheDocument();
+    expect(screen.getByText(/Interactive Stylometric Sample Comparator/i)).toBeInTheDocument();
   });
 });

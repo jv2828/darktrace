@@ -7,6 +7,7 @@ import Button from '../components/ui/Button';
 import Spinner from '../components/ui/Spinner';
 import EmptyState from '../components/ui/EmptyState';
 import ErrorState from '../components/ui/ErrorState';
+import ErrorBoundary from '../components/ui/ErrorBoundary';
 import StageStatusCards from '../components/investigations/StageStatusCards';
 import OverviewTab from '../components/investigations/tabs/OverviewTab';
 import EvidenceGraphTab from '../components/investigations/tabs/EvidenceGraphTab';
@@ -310,57 +311,59 @@ export default function InvestigationWorkspacePage() {
 
       {/* Tab Viewport */}
       <div className="pt-2">
-        {activeTab === 'overview' && (
-          <OverviewTab
-            investigationId={id}
-            runId={activeRun?.id}
-            onTriggerRun={handleRunCorrelation}
-            setTab={setTab}
-          />
-        )}
+        <ErrorBoundary fallbackTitle="Tab Display Error">
+          {activeTab === 'overview' && (
+            <OverviewTab
+              investigationId={id}
+              runId={activeRun?.id}
+              onTriggerRun={handleRunCorrelation}
+              setTab={setTab}
+            />
+          )}
 
-        {activeTab === 'graph' && (
-          <EvidenceGraphTab
-            investigationId={id}
-            runId={activeRun?.id}
-            onTriggerRun={handleRunCorrelation}
-          />
-        )}
+          {activeTab === 'graph' && (
+            <EvidenceGraphTab
+              investigationId={id}
+              runId={activeRun?.id}
+              onTriggerRun={handleRunCorrelation}
+            />
+          )}
 
-        {activeTab === 'chronology' && (
-          <ChronologyTab
-            investigationId={id}
-            runId={activeRun?.id}
-          />
-        )}
+          {activeTab === 'chronology' && (
+            <ChronologyTab
+              investigationId={id}
+              runId={activeRun?.id}
+            />
+          )}
 
-        {activeTab === 'infrastructure' && (
-          <InfrastructureTab
-            investigationId={id}
-            runId={activeRun?.id}
-          />
-        )}
+          {activeTab === 'infrastructure' && (
+            <InfrastructureTab
+              investigationId={id}
+              runId={activeRun?.id}
+            />
+          )}
 
-        {activeTab === 'behaviour' && (
-          <BehaviourTab
-            investigationId={id}
-            runId={activeRun?.id}
-          />
-        )}
+          {activeTab === 'behaviour' && (
+            <BehaviourTab
+              investigationId={id}
+              runId={activeRun?.id}
+            />
+          )}
 
-        {activeTab === 'stylometry' && (
-          <StylometryTab
-            investigationId={id}
-            runId={activeRun?.id}
-          />
-        )}
+          {activeTab === 'stylometry' && (
+            <StylometryTab
+              investigationId={id}
+              runId={activeRun?.id}
+            />
+          )}
 
-        {activeTab === 'dossier' && (
-          <DossierTab
-            investigationId={id}
-            runId={activeRun?.id}
-          />
-        )}
+          {activeTab === 'dossier' && (
+            <DossierTab
+              investigationId={id}
+              runId={activeRun?.id}
+            />
+          )}
+        </ErrorBoundary>
       </div>
     </div>
   );

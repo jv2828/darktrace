@@ -80,7 +80,15 @@ export default function ActorProfilePage() {
   const wallets = profile.wallet_identifiers || [];
   const infra = profile.infrastructure_indicators || [];
   const behaviour = profile.behaviour_summary || {};
-  const stylometry = profile.stylometry_summary || {};
+  const stylometry = profile.stylometry_summary?.features || profile.stylometry_summary || {};
+  const avgSentence = stylometry.mean_sentence_length ?? stylometry.avg_sentence_len;
+  const avgWord = stylometry.mean_word_length ?? stylometry.avg_word_len;
+  const punctRate =
+    Object.entries(stylometry)
+      .filter(([k]) => k.startsWith('punct_'))
+      .reduce((acc, [, v]) => acc + (typeof v === 'number' ? v : 0), 0) ||
+    (stylometry.punctuation_rate ? stylometry.punctuation_rate * 100 : null);
+  const uppercaseRate = stylometry.uppercase_letter_ratio ?? stylometry.uppercase_rate;
   const recentPosts = profile.recent_posts || [];
   const contradictions = profile.contradictions || [];
   const relatedPersonas = profile.possible_related_personas || [];
@@ -320,25 +328,25 @@ export default function ActorProfilePage() {
                 <div className="p-2.5 rounded bg-slate-900 border border-slate-800">
                   <span className="text-slate-500 text-[10px] uppercase block">Avg Sentence Length</span>
                   <span className="font-mono text-slate-200 font-semibold">
-                    {stylometry.avg_sentence_len ? `${stylometry.avg_sentence_len.toFixed(1)} words` : '—'}
+                    {avgSentence ? `${avgSentence.toFixed(1)} words` : '—'}
                   </span>
                 </div>
                 <div className="p-2.5 rounded bg-slate-900 border border-slate-800">
                   <span className="text-slate-500 text-[10px] uppercase block">Avg Word Length</span>
                   <span className="font-mono text-slate-200 font-semibold">
-                    {stylometry.avg_word_len ? `${stylometry.avg_word_len.toFixed(2)} chars` : '—'}
+                    {avgWord ? `${avgWord.toFixed(2)} chars` : '—'}
                   </span>
                 </div>
                 <div className="p-2.5 rounded bg-slate-900 border border-slate-800">
                   <span className="text-slate-500 text-[10px] uppercase block">Punctuation Rate</span>
                   <span className="font-mono text-slate-200 font-semibold">
-                    {stylometry.punctuation_rate ? `${(stylometry.punctuation_rate * 100).toFixed(1)}%` : '—'}
+                    {punctRate ? `${punctRate.toFixed(1)}%` : '—'}
                   </span>
                 </div>
                 <div className="p-2.5 rounded bg-slate-900 border border-slate-800">
                   <span className="text-slate-500 text-[10px] uppercase block">Uppercase Rate</span>
                   <span className="font-mono text-slate-200 font-semibold">
-                    {stylometry.uppercase_rate ? `${(stylometry.uppercase_rate * 100).toFixed(1)}%` : '—'}
+                    {uppercaseRate ? `${(uppercaseRate * 100).toFixed(1)}%` : '—'}
                   </span>
                 </div>
               </div>
